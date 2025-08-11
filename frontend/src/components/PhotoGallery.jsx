@@ -45,11 +45,11 @@ const PhotoGallery = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Our Story
+              Nuestra Historia
             </h2>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Every photograph tells a part of our love story. These special moments brought us here.
+              Cada fotografía cuenta una parte de nuestra historia de amor. Estos momentos especiales nos trajeron hasta aquí.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ const PhotoGallery = () => {
             
             {/* Image Counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm">
-              {selectedPhoto.index + 1} of {photos.length}
+              {selectedPhoto.index + 1} de {photos.length}
             </div>
           </div>
 

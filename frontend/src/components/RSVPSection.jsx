@@ -33,8 +33,8 @@ const RSVPSection = () => {
     
     if (!formData.name || !formData.email || !formData.attendance) {
       toast({
-        title: "Required fields missing",
-        description: "Please fill in all required fields.",
+        title: "Campos requeridos",
+        description: "Por favor completa todos los campos obligatorios.",
         variant: "destructive"
       });
       return;
@@ -45,8 +45,8 @@ const RSVPSection = () => {
     try {
       await saveRSVP(formData);
       toast({
-        title: "RSVP Sent!",
-        description: "Thank you for confirming your attendance!",
+        title: "¡RSVP Enviado!",
+        description: "¡Gracias por confirmar tu asistencia!",
       });
       
       setFormData({
@@ -62,7 +62,7 @@ const RSVPSection = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was a problem sending your response.",
+        description: "Hubo un problema al enviar tu respuesta.",
         variant: "destructive"
       });
     } finally {
@@ -77,12 +77,12 @@ const RSVPSection = () => {
           {/* Simple Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Please Join Us
+              Acompáñanos
             </h2>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Your presence will make our day even more special. Please confirm your attendance 
-              before <span className="font-medium text-gray-800">{weddingData.rsvp.deadline}</span>
+              Tu presencia hará de nuestro día aún más especial. Por favor confirma tu asistencia 
+              antes del <span className="font-medium text-gray-800">{weddingData.rsvp.deadline}</span>
             </p>
           </div>
 
@@ -94,10 +94,10 @@ const RSVPSection = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
+                      Nombre Completo *
                     </label>
                     <Input
-                      placeholder="Your full name"
+                      placeholder="Tu nombre completo"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       className="h-12 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
@@ -110,7 +110,7 @@ const RSVPSection = () => {
                     </label>
                     <Input
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder="tu@email.com"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       className="h-12 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
@@ -122,10 +122,10 @@ const RSVPSection = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone
+                      Teléfono
                     </label>
                     <Input
-                      placeholder="Your phone number"
+                      placeholder="Tu número de teléfono"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="h-12 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
@@ -134,15 +134,15 @@ const RSVPSection = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Will you attend? *
+                      ¿Asistirás? *
                     </label>
                     <Select onValueChange={(value) => handleInputChange('attendance', value)}>
                       <SelectTrigger className="h-12 border-gray-300 focus:border-gray-500 focus:ring-gray-500">
-                        <SelectValue placeholder="Please select" />
+                        <SelectValue placeholder="Por favor selecciona" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="si">Yes, I'll be there</SelectItem>
-                        <SelectItem value="no">Sorry, can't make it</SelectItem>
+                        <SelectItem value="si">Sí, asistiré</SelectItem>
+                        <SelectItem value="no">No podré asistir</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -151,22 +151,22 @@ const RSVPSection = () => {
                 {/* Guest Details (if attending) */}
                 {formData.attendance === 'si' && (
                   <div className="bg-gray-50 p-6 rounded-lg space-y-4">
-                    <h3 className="text-lg font-medium text-gray-800 mb-4">Additional Details</h3>
+                    <h3 className="text-lg font-medium text-gray-800 mb-4">Detalles Adicionales</h3>
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Number of guests
+                          Número de invitados
                         </label>
                         <Select onValueChange={(value) => handleInputChange('guests', value)} defaultValue="1">
                           <SelectTrigger className="h-12">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="1">Just me</SelectItem>
-                            <SelectItem value="2">2 people</SelectItem>
-                            <SelectItem value="3">3 people</SelectItem>
-                            <SelectItem value="4">4 people</SelectItem>
+                            <SelectItem value="1">Solo yo</SelectItem>
+                            <SelectItem value="2">2 personas</SelectItem>
+                            <SelectItem value="3">3 personas</SelectItem>
+                            <SelectItem value="4">4 personas</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
@@ -174,10 +174,10 @@ const RSVPSection = () => {
                       {parseInt(formData.guests) > 1 && (
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Guest names
+                            Nombres de acompañantes
                           </label>
                           <Input
-                            placeholder="Names of your guests"
+                            placeholder="Nombres de tus invitados"
                             value={formData.guestNames}
                             onChange={(e) => handleInputChange('guestNames', e.target.value)}
                             className="h-12"
@@ -188,10 +188,10 @@ const RSVPSection = () => {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Dietary restrictions or allergies
+                        Alergias o restricciones alimentarias
                       </label>
                       <Input
-                        placeholder="Any allergies or dietary needs?"
+                        placeholder="¿Alguna alergia o restricción alimentaria?"
                         value={formData.allergies}
                         onChange={(e) => handleInputChange('allergies', e.target.value)}
                         className="h-12"
@@ -203,10 +203,10 @@ const RSVPSection = () => {
                 {/* Message */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Special message (optional)
+                    Mensaje especial (opcional)
                   </label>
                   <Textarea
-                    placeholder="Share a special message for the couple..."
+                    placeholder="Comparte un mensaje especial para los novios..."
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
                     className="min-h-24 border-gray-300 focus:border-gray-500 focus:ring-gray-500"
@@ -223,12 +223,12 @@ const RSVPSection = () => {
                     {isSubmitting ? (
                       <div className="flex items-center">
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                        Sending...
+                        Enviando...
                       </div>
                     ) : (
                       <div className="flex items-center">
                         <Check className="w-5 h-5 mr-2" />
-                        Send RSVP
+                        Enviar RSVP
                       </div>
                     )}
                   </Button>

@@ -19,7 +19,7 @@ const GiftSection = () => {
           {/* Simple Header */}
           <div className="mb-16">
             <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Gift Registry
+              Mesa de Regalos
             </h2>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </div>
@@ -38,7 +38,7 @@ const GiftSection = () => {
             >
               <div className="flex items-center justify-center space-x-3">
                 <Gift className="w-5 h-5" />
-                <span>View Registry</span>
+                <span>Ver Mesa de Regalos</span>
               </div>
             </a>
           </div>
@@ -58,7 +58,7 @@ const VenueSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Event Details
+              Detalles del Evento
             </h2>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </div>
@@ -68,7 +68,7 @@ const VenueSection = () => {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="flex items-center mb-6">
                 <MapPin className="w-6 h-6 text-gray-600 mr-3" />
-                <h3 className="text-2xl font-light text-gray-800">Location</h3>
+                <h3 className="text-2xl font-light text-gray-800">Ubicación</h3>
               </div>
               
               <div className="space-y-3">
@@ -82,15 +82,15 @@ const VenueSection = () => {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="flex items-center mb-6">
                 <Clock className="w-6 h-6 text-gray-600 mr-3" />
-                <h3 className="text-2xl font-light text-gray-800">Schedule</h3>
+                <h3 className="text-2xl font-light text-gray-800">Cronograma</h3>
               </div>
               
               <div className="space-y-4">
                 {[
-                  { event: 'Ceremony', time: timeline.ceremony },
-                  { event: 'Cocktail Hour', time: timeline.cocktail },
-                  { event: 'Reception', time: timeline.reception },
-                  { event: 'Party', time: timeline.party }
+                  { event: 'Ceremonia', time: timeline.ceremony },
+                  { event: 'Cóctel', time: timeline.cocktail },
+                  { event: 'Recepción', time: timeline.reception },
+                  { event: 'Fiesta', time: timeline.party }
                 ].map((item, index) => (
                   <div key={item.event} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
                     <span className="text-gray-700">{item.event}</span>
@@ -119,7 +119,7 @@ const Footer = () => {
           <p className="text-gray-400 mb-8">{couple.weddingDate}</p>
           <div className="w-24 h-px bg-gray-600 mx-auto mb-6"></div>
           <p className="text-gray-400 leading-relaxed">
-            Thank you for being part of our special day
+            Gracias por ser parte de nuestro día especial
           </p>
         </div>
       </div>

@@ -50,7 +50,7 @@ const Navigation = () => {
                     : 'text-white/90 hover:text-white'
                 }`}
               >
-                Wedding
+                Boda
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
@@ -60,7 +60,7 @@ const Navigation = () => {
                     : 'text-white/90 hover:text-white'
                 }`}
               >
-                Gallery
+                Galería
               </button>
               <button 
                 onClick={() => scrollToSection('venue')}
@@ -70,7 +70,7 @@ const Navigation = () => {
                     : 'text-white/90 hover:text-white'
                 }`}
               >
-                Location
+                Ubicación
               </button>
               <button 
                 onClick={() => scrollToSection('gifts')}
@@ -80,7 +80,7 @@ const Navigation = () => {
                     : 'text-white/90 hover:text-white'
                 }`}
               >
-                Gifts
+                Regalos
               </button>
               <button 
                 onClick={() => scrollToSection('rsvp')}
@@ -121,25 +121,25 @@ const Navigation = () => {
                 onClick={() => scrollToSection('wedding')}
                 className="block w-full text-left text-lg font-medium text-gray-800 hover:text-gray-600 transition-colors duration-200"
               >
-                Wedding
+                Boda
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
                 className="block w-full text-left text-lg font-medium text-gray-800 hover:text-gray-600 transition-colors duration-200"
               >
-                Gallery
+                Galería
               </button>
               <button 
                 onClick={() => scrollToSection('venue')}
                 className="block w-full text-left text-lg font-medium text-gray-800 hover:text-gray-600 transition-colors duration-200"
               >
-                Location
+                Ubicación
               </button>
               <button 
                 onClick={() => scrollToSection('gifts')}
                 className="block w-full text-left text-lg font-medium text-gray-800 hover:text-gray-600 transition-colors duration-200"
               >
-                Gifts
+                Regalos
               </button>
               <button 
                 onClick={() => scrollToSection('rsvp')}
