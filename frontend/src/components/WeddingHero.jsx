@@ -11,21 +11,22 @@ const WeddingHero = () => {
 
   return (
     <section id="wedding" className="relative min-h-screen flex items-end justify-center overflow-hidden">
-      {/* Hero Background Image - Adjusted for mobile to show both subjects */}
+      {/* Hero Background Image - Fixed positioning for iPhone to show both subjects */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/jp8noucl_Header.JPG"
           alt="Axel y Dani - Pareja"
-          className="w-full h-full object-cover object-center md:object-center"
+          className="w-full h-full object-cover"
           style={{
-            objectPosition: 'center center'
+            objectPosition: 'center 35%', // Adjusted to show both subjects centered
+            transformOrigin: 'center center'
           }}
         />
         {/* Sophisticated Overlay with Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
       </div>
 
-      {/* Decorative Elements */}
+      {/* Decorative Elements with Tonal-inspired animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Floating Elements */}
         <div className="absolute top-20 left-20 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
@@ -38,24 +39,24 @@ const WeddingHero = () => {
         <div className="absolute bottom-24 left-24 w-6 h-6 border border-white/10 rounded-full animate-pulse delay-500"></div>
       </div>
 
-      {/* Names - Clean, no decorative elements */}
-      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-4 z-20 text-center text-white transition-all duration-1500 ease-out ${
+      {/* Names - Clean, no decorative elements with enhanced animations */}
+      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-4 z-20 text-center text-white transition-all duration-2000 ease-out ${
         isLoaded ? 'translate-y-4 opacity-100' : 'translate-y-14 opacity-0'
       }`}>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-[0.2em] mb-2 px-4">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-[0.2em] mb-2 px-4 transform transition-all duration-1500 delay-300">
           {couple.groom} & {couple.bride}
         </h1>
         
-        <p className="text-base sm:text-lg md:text-xl font-light mt-4 opacity-90 tracking-widest px-4">
+        <p className="text-base sm:text-lg md:text-xl font-light mt-4 opacity-90 tracking-widest px-4 transform transition-all duration-1500 delay-500">
           {couple.weddingDate}
         </p>
       </div>
 
-      {/* Enhanced Venue info - positioned bottom left, responsive */}
-      <div className={`absolute bottom-8 left-4 md:left-8 z-20 text-white transition-all duration-1000 ease-out delay-300 ${
+      {/* Enhanced Venue info - positioned bottom left, responsive with enhanced animations */}
+      <div className={`absolute bottom-8 left-4 md:left-8 z-20 text-white transition-all duration-1500 ease-out delay-700 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
-        <div className="bg-black/20 backdrop-blur-md p-3 md:p-4 border border-white/10">
+        <div className="bg-black/20 backdrop-blur-md p-3 md:p-4 border border-white/10 transform transition-all duration-300 hover:bg-black/30 hover:scale-105">
           <p className="text-xs sm:text-sm md:text-base font-light opacity-90 tracking-wide">
             Finca San Gabriel, La Cañada
           </p>
@@ -65,8 +66,8 @@ const WeddingHero = () => {
         </div>
       </div>
 
-      {/* Enhanced RSVP button - positioned bottom right, responsive */}
-      <div className={`absolute bottom-8 right-4 md:right-8 z-20 transition-all duration-1000 ease-out delay-500 ${
+      {/* Enhanced RSVP button - positioned bottom right, responsive with enhanced animations */}
+      <div className={`absolute bottom-8 right-4 md:right-8 z-20 transition-all duration-1500 ease-out delay-900 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         <button 
@@ -78,8 +79,10 @@ const WeddingHero = () => {
         </button>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white animate-bounce opacity-70">
+      {/* Enhanced Scroll Indicator with Tonal-inspired animation */}
+      <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white transition-all duration-2000 ease-out delay-1100 ${
+        isLoaded ? 'animate-bounce opacity-70' : 'opacity-0 translate-y-5'
+      }`}>
         <div className="flex flex-col items-center">
           <div className="w-5 h-8 border border-white/40 flex justify-center mb-2">
             <div className="w-0.5 h-2 bg-white/60 mt-1.5 animate-pulse"></div>

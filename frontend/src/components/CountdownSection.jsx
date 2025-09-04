@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatedSection, StaggeredAnimation } from './ScrollAnimations';
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState({});
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
-    
     const weddingDate = new Date('2026-02-07T16:00:00').getTime();
 
     const timer = setInterval(() => {
@@ -48,10 +46,8 @@ const CountdownSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className={`text-center mb-20 transition-all duration-1500 ${
-            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
+          {/* Header with Tonal-inspired animations */}
+          <AnimatedSection className="text-center mb-20" animation="fade-up">
             <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 tracking-[0.15em]">
               Countdown
             </h2>
@@ -59,21 +55,16 @@ const CountdownSection = () => {
             <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light" style={{ color: '#2e2e22' }}>
               El tiempo vuela cuando estás enamorado. ¡Mira cuánto falta para nuestro gran día!
             </p>
-          </div>
+          </AnimatedSection>
 
-          {/* Countdown Timer - Smaller boxes */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {timeUnits.map((unit, index) => (
-              <div 
-                key={unit.label}
-                className={`group relative transition-all duration-700 ${
-                  isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                }`}
-                style={{
-                  animationDelay: `${index * 200}ms`
-                }}
-              >
-                <div className="relative bg-white/90 backdrop-blur-xl p-6 shadow-lg border border-gray-300 hover:scale-105 transition-all duration-500 overflow-hidden">
+          {/* Countdown Timer with Staggered Animation */}
+          <StaggeredAnimation 
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+            staggerDelay={150}
+          >
+            {timeUnits.map((unit) => (
+              <div key={unit.label} className="group relative">
+                <div className="relative bg-white/90 backdrop-blur-xl p-6 shadow-lg border border-gray-300 hover:scale-105 transition-all duration-500 overflow-hidden hover:shadow-2xl">
                   {/* Content */}
                   <div className="relative z-10 text-center">
                     {/* Number */}
@@ -87,8 +78,11 @@ const CountdownSection = () => {
                     </div>
                     
                     {/* Decorative Line */}
-                    <div className="w-8 h-0.5 bg-gray-400 mx-auto mt-3"></div>
+                    <div className="w-8 h-0.5 bg-gray-400 mx-auto mt-3 transition-all duration-300 group-hover:w-12"></div>
                   </div>
+                  
+                  {/* Hover Effect Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Decorative Corner */}
                   <div className="absolute top-1 right-1 w-2 h-2 border-r border-t border-gray-300 opacity-30"></div>
@@ -96,18 +90,20 @@ const CountdownSection = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggeredAnimation>
 
-          {/* Message */}
-          <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
-            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="bg-white/60 backdrop-blur-sm px-8 py-4 inline-block border border-gray-300">
+          {/* Message with enhanced animation */}
+          <AnimatedSection 
+            className="text-center mt-16" 
+            animation="fade-up" 
+            delay={600}
+          >
+            <div className="bg-white/60 backdrop-blur-sm px-8 py-4 inline-block border border-gray-300 hover:bg-white/70 transition-all duration-300">
               <p className="text-lg font-light" style={{ color: '#2e2e22' }}>
                 Ya casiiiiiiii!
               </p>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>
