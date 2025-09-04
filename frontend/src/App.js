@@ -148,6 +148,7 @@ const WeddingPage = () => {
       <Navigation />
       <WeddingHero />
       <CountdownSection />
+      <CountdownSection />
       <PhotoGallery />
       <EtiquetaSection />
       <VenueSection />
