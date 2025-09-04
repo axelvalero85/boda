@@ -80,8 +80,11 @@ const VenueSection = () => {
   const { venue, timeline, logos } = weddingData;
   
   return (
-    <section id="venue" className="py-20" style={{ backgroundColor: '#ae9c8f' }}>
-      <div className="container mx-auto px-6">
+    <section id="venue" className="py-20 geometric-pattern" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Geometric background pattern overlay */}
+      <div className="absolute inset-0 geometric-pattern-subtle"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header with Logo */}
           <AnimatedSection className="text-center mb-16" animation="fade-up">
