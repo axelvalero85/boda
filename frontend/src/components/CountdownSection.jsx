@@ -38,7 +38,7 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden" id="countdown" style={{ backgroundColor: '#d6d6c6' }}>
+    <section className="relative py-32 overflow-hidden" id="countdown" style={{ backgroundColor: '#eaeae2' }}>
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -56,20 +56,13 @@ const CountdownSection = () => {
               Countdown
             </h2>
             
-            {/* Decorative Elements */}
-            <div className="flex items-center justify-center space-x-8 mb-10">
-              <div className="w-16 h-px bg-gray-400"></div>
-              <div className="w-32 h-px bg-gray-400"></div>
-              <div className="w-16 h-px bg-gray-400"></div>
-            </div>
-            
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
               El tiempo vuela cuando estás enamorado. ¡Mira cuánto falta para nuestro gran día!
             </p>
           </div>
 
-          {/* Countdown Timer */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {/* Countdown Timer - Smaller boxes */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {timeUnits.map((unit, index) => (
               <div 
                 key={unit.label}
@@ -80,26 +73,26 @@ const CountdownSection = () => {
                   animationDelay: `${index * 200}ms`
                 }}
               >
-                <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-gray-300 hover:scale-105 transition-all duration-500 overflow-hidden">
+                <div className="relative bg-white/90 backdrop-blur-xl p-6 shadow-lg border border-gray-300 hover:scale-105 transition-all duration-500 overflow-hidden">
                   {/* Content */}
                   <div className="relative z-10 text-center">
                     {/* Number */}
-                    <div className="text-4xl md:text-6xl font-light text-gray-800 mb-3 transition-all duration-500 group-hover:scale-110">
+                    <div className="text-3xl md:text-4xl font-light text-gray-800 mb-2 transition-all duration-500 group-hover:scale-110">
                       {unit.value.toString().padStart(2, '0')}
                     </div>
                     
                     {/* Label */}
-                    <div className="text-sm md:text-base text-gray-600 font-medium tracking-wide uppercase">
+                    <div className="text-xs md:text-sm text-gray-600 font-medium tracking-wide uppercase">
                       {unit.label}
                     </div>
                     
                     {/* Decorative Line */}
-                    <div className="w-12 h-0.5 bg-gray-400 mx-auto mt-4"></div>
+                    <div className="w-8 h-0.5 bg-gray-400 mx-auto mt-3"></div>
                   </div>
                   
                   {/* Decorative Corner */}
-                  <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-gray-300 opacity-30"></div>
-                  <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-gray-300 opacity-30"></div>
+                  <div className="absolute top-1 right-1 w-2 h-2 border-r border-t border-gray-300 opacity-30"></div>
+                  <div className="absolute bottom-1 left-1 w-2 h-2 border-l border-b border-gray-300 opacity-30"></div>
                 </div>
               </div>
             ))}
@@ -109,9 +102,9 @@ const CountdownSection = () => {
           <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <div className="bg-white/60 backdrop-blur-sm rounded-full px-8 py-4 inline-block border border-gray-300">
+            <div className="bg-white/60 backdrop-blur-sm px-8 py-4 inline-block border border-gray-300">
               <p className="text-gray-800 text-lg font-light">
-                ¡Cada segundo nos acerca más a nuestro día especial! 💕
+                Ya casiiiiiiii!
               </p>
             </div>
           </div>

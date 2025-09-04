@@ -35,48 +35,24 @@ const WeddingHero = () => {
         <div className="absolute bottom-24 left-24 w-6 h-6 border border-white/10 rounded-full animate-pulse delay-500"></div>
       </div>
 
-      {/* Names with Enhanced Typography */}
+      {/* Names - Clean, no decorative elements */}
       <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-4 z-20 text-center text-white transition-all duration-1500 ease-out ${
         isLoaded ? 'translate-y-4 opacity-100' : 'translate-y-14 opacity-0'
       }`}>
-        {/* Decorative Line Above */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="w-8 h-px bg-white/40"></div>
-          <div className="w-2 h-2 bg-white/60 rounded-full mx-4"></div>
-          <div className="w-8 h-px bg-white/40"></div>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-extralight tracking-[0.2em] mb-2 relative">
-          <span className="relative inline-block">
-            {couple.groom}
-            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-          </span>
-          <span className="mx-6 text-white/70 font-thin">&</span>
-          <span className="relative inline-block">
-            {couple.bride}
-            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-          </span>
+        <h1 className="text-5xl md:text-7xl font-extralight tracking-[0.2em] mb-2">
+          {couple.groom} & {couple.bride}
         </h1>
         
         <p className="text-lg md:text-xl font-light mt-4 opacity-90 tracking-widest">
           {couple.weddingDate}
         </p>
-
-        {/* Decorative Line Below */}
-        <div className="flex items-center justify-center mt-8">
-          <div className="w-12 h-px bg-white/40"></div>
-          <div className="w-1 h-1 bg-white/60 rounded-full mx-3"></div>
-          <div className="w-6 h-px bg-white/40"></div>
-          <div className="w-1 h-1 bg-white/60 rounded-full mx-3"></div>
-          <div className="w-12 h-px bg-white/40"></div>
-        </div>
       </div>
 
       {/* Enhanced Venue info - positioned bottom left */}
       <div className={`absolute bottom-8 left-8 z-20 text-white transition-all duration-1000 ease-out delay-300 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
-        <div className="bg-black/20 backdrop-blur-md rounded-lg p-4 border border-white/10">
+        <div className="bg-black/20 backdrop-blur-md p-4 border border-white/10">
           <p className="text-sm md:text-base font-light opacity-90 tracking-wide">
             Finca San Gabriel, La Cañada
           </p>
@@ -102,8 +78,8 @@ const WeddingHero = () => {
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white animate-bounce opacity-70">
         <div className="flex flex-col items-center">
-          <div className="w-5 h-8 border border-white/40 rounded-full flex justify-center mb-2">
-            <div className="w-0.5 h-2 bg-white/60 rounded-full mt-1.5 animate-pulse"></div>
+          <div className="w-5 h-8 border border-white/40 flex justify-center mb-2">
+            <div className="w-0.5 h-2 bg-white/60 mt-1.5 animate-pulse"></div>
           </div>
           <div className="text-xs tracking-widest opacity-60">SCROLL</div>
         </div>

@@ -8,7 +8,7 @@ const EtiquetaSection = () => {
   }, []);
 
   return (
-    <section className="relative py-32 overflow-hidden" id="etiqueta" style={{ backgroundColor: '#d6d6c6' }}>
+    <section className="relative py-32 overflow-hidden" id="etiqueta" style={{ backgroundColor: '#eaeae2' }}>
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -26,27 +26,20 @@ const EtiquetaSection = () => {
               Etiqueta
             </h2>
             
-            {/* Decorative Elements */}
-            <div className="flex items-center justify-center space-x-8 mb-10">
-              <div className="w-16 h-px bg-gray-400"></div>
-              <div className="w-32 h-px bg-gray-400"></div>
-              <div className="w-16 h-px bg-gray-400"></div>
-            </div>
-            
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-12">
               Queremos que te sientas cómodo y elegante en nuestro día especial.
             </p>
           </div>
 
-          {/* Dress Code Card */}
+          {/* Dress Code Card - No rounded corners */}
           <div className={`max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-gray-300 overflow-hidden">
+            <div className="relative bg-white/90 backdrop-blur-xl p-12 shadow-2xl border border-gray-300 overflow-hidden">
               {/* Background Effects */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-50/20 via-transparent to-gray-50/10"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-200/10 to-transparent rounded-full blur-2xl"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-gray-200/10 to-transparent rounded-full blur-xl"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-200/10 to-transparent blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-gray-200/10 to-transparent blur-xl"></div>
               
               <div className="relative z-10 text-center">
                 {/* Main Dress Code */}
@@ -59,9 +52,9 @@ const EtiquetaSection = () => {
                   <div className="w-32 h-0.5 bg-gray-400 mx-auto mb-8"></div>
                 </div>
 
-                {/* Additional Details */}
+                {/* Additional Details - No rounded corners */}
                 <div className="grid md:grid-cols-2 gap-8 text-left">
-                  <div className="bg-gray-50/50 rounded-xl p-6 border border-gray-200/50">
+                  <div className="bg-gray-50/50 p-6 border border-gray-200/50">
                     <h4 className="text-lg font-semibold text-gray-800 mb-3">
                       Para Ellas
                     </h4>
@@ -70,7 +63,7 @@ const EtiquetaSection = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-gray-50/50 rounded-xl p-6 border border-gray-200/50">
+                  <div className="bg-gray-50/50 p-6 border border-gray-200/50">
                     <h4 className="text-lg font-semibold text-gray-800 mb-3">
                       Para Ellos
                     </h4>
@@ -81,7 +74,7 @@ const EtiquetaSection = () => {
                 </div>
 
                 {/* Note */}
-                <div className="mt-8 p-4 bg-white/50 rounded-lg border-l-4 border-gray-400">
+                <div className="mt-8 p-4 bg-white/50 border-l-4 border-gray-400">
                   <p className="text-gray-600 text-sm italic">
                     ¡Lo más importante es que te sientas cómodo y celebres con nosotros!
                   </p>

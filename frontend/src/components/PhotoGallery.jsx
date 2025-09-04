@@ -37,7 +37,7 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="relative py-32 overflow-hidden" style={{ backgroundColor: '#d6d6c6' }}>
+    <section id="gallery" className="relative py-32 overflow-hidden" style={{ backgroundColor: '#eaeae2' }}>
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -55,25 +55,18 @@ const PhotoGallery = () => {
               Nuestra Historia
             </h2>
             
-            {/* Decorative Elements */}
-            <div className="flex items-center justify-center space-x-8 mb-10">
-              <div className="w-16 h-px bg-gray-400"></div>
-              <div className="w-32 h-px bg-gray-400"></div>
-              <div className="w-16 h-px bg-gray-400"></div>
-            </div>
-            
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
               Cada fotografía cuenta una parte de nuestra historia de amor. 
               Estos momentos especiales nos trajeron hasta aquí, creando memorias que durarán para siempre.
             </p>
           </div>
 
-          {/* Photo Grid */}
+          {/* Photo Grid - No rounded corners */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {photos.map((photo, index) => (
               <div 
                 key={photo.id}
-                className={`group relative overflow-hidden bg-gray-200 cursor-pointer transition-all duration-700 hover:shadow-2xl rounded-2xl ${
+                className={`group relative overflow-hidden bg-gray-200 cursor-pointer transition-all duration-700 hover:shadow-2xl ${
                   index === 0 ? 'md:col-span-2 md:row-span-1' : 
                   index === 3 ? 'md:col-span-1 md:row-span-2' : 
                   'aspect-square'
@@ -97,10 +90,10 @@ const PhotoGallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 
                 {/* Decorative Frame */}
-                <div className="absolute inset-2 border-2 border-white/0 group-hover:border-white/30 rounded-xl transition-all duration-500"></div>
+                <div className="absolute inset-2 border-2 border-white/0 group-hover:border-white/30 transition-all duration-500"></div>
 
                 {/* Photo Counter Badge */}
-                <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   {index + 1}/{photos.length}
                 </div>
               </div>
@@ -117,7 +110,7 @@ const PhotoGallery = () => {
             onClick={closeLightbox}
             className="absolute top-6 right-6 z-20 group"
           >
-            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
+            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
               <X className="w-7 h-7" />
             </div>
           </button>
@@ -127,7 +120,7 @@ const PhotoGallery = () => {
             onClick={() => navigatePhoto('prev')}
             className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 group"
           >
-            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
+            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
               <ChevronLeft className="w-7 h-7" />
             </div>
           </button>
@@ -136,7 +129,7 @@ const PhotoGallery = () => {
             onClick={() => navigatePhoto('next')}
             className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 group"
           >
-            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
+            <div className="w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300 border border-white/20 hover:scale-110">
               <ChevronRight className="w-7 h-7" />
             </div>
           </button>
@@ -146,12 +139,12 @@ const PhotoGallery = () => {
             <img
               src={selectedPhoto.url}
               alt={selectedPhoto.alt}
-              className="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-xl"
+              className="max-w-full max-h-[80vh] object-contain shadow-2xl"
             />
             
             {/* Image Info */}
             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-              <div className="bg-black/70 backdrop-blur-md text-white px-8 py-4 rounded-full border border-white/10">
+              <div className="bg-black/70 backdrop-blur-md text-white px-8 py-4 border border-white/10">
                 <span className="text-sm font-medium">
                   {selectedPhoto.index + 1} de {photos.length}
                 </span>
