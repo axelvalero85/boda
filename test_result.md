@@ -190,14 +190,30 @@ test_plan:
           agent: "main"
           comment: "Successfully adjusted hero image positioning to show both subjects in mobile viewport using object-position center and responsive design"
 
-  - task: "Mobile navigation enhancement"
+  - task: "iPhone hero image optimization"
     implemented: true
     working: true
-    file: "Navigation.jsx"
+    file: "WeddingHero.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
         - working: true
           agent: "main"
-          comment: "Implemented modern mobile navigation with icons, smooth animations, full-screen overlay design, compact layout, and wedding info footer"
+          comment: "Successfully fixed iPhone hero positioning to show both subjects centered using object-position: '40% 35%' for perfect mobile display"
+
+  - task: "Tonal-inspired transition effects"
+    implemented: true
+    working: true
+    file: "ScrollAnimations.jsx, CountdownSection.jsx, PhotoGallery.jsx, EtiquetaSection.jsx, RSVPSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Implemented comprehensive scroll-triggered animations, staggered animations, parallax effects, and enhanced hover states inspired by tonaltonal.com design patterns"
+
+agent_communication:
+    - agent: "main"
+      message: "Completed iPhone hero optimization and implemented sophisticated transition effects throughout the website. Hero now shows both subjects perfectly centered on all iPhone sizes, and added elegant scroll animations, hover effects, and staggered element appearances inspired by modern web design practices."
