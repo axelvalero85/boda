@@ -76,13 +76,13 @@ const RSVPSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Simple Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-white mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
               Acompáñanos
             </h2>
-            <div className="w-24 h-px bg-white/60 mx-auto mb-8"></div>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
               Tu presencia hará de nuestro día aún más especial. Por favor confirma tu asistencia 
-              antes del <span className="font-medium text-white">{weddingData.rsvp.deadline}</span>
+              antes del <span className="font-medium text-gray-800">{weddingData.rsvp.deadline}</span>
             </p>
           </div>
 
