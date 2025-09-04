@@ -225,15 +225,16 @@ const RSVPSection = () => {
                           Para tu comodidad, contaremos con servicios de camionetas desde algunos puntos de la ciudad hasta la locación y de regreso. Háznoslo saber si te gustaría utilizar este servicio.
                         </p>
                       </div>
-                      <Select onValueChange={(value) => handleInputChange('transport', value)}>
-                        <SelectTrigger className="h-12">
-                          <SelectValue placeholder="¿Te interesa el servicio de transporte?" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="si">Sí, me interesa el transporte</SelectItem>
-                          <SelectItem value="no">No, tengo transporte propio</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <select
+                        value={formData.transport}
+                        onChange={(e) => handleInputChange('transport', e.target.value)}
+                        className="h-12 w-full border border-gray-300 px-3 py-2 bg-white"
+                        style={{ color: '#2e2e22' }}
+                      >
+                        <option value="" disabled>¿Te interesa el servicio de transporte?</option>
+                        <option value="si">Sí, me interesa el transporte</option>
+                        <option value="no">No, tengo transporte propio</option>
+                      </select>
                     </div>
                   </AnimatedSection>
                 )}
