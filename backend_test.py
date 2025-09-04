@@ -454,38 +454,60 @@ class BackendTester:
             print("\n❌ CRITICAL: Health check failed. Cannot proceed with other tests.")
             return False
         
+        # Test 2: Email Configuration Health Check
+        print("\n" + "-" * 40)
+        print("EMAIL CONFIGURATION TESTS")
+        print("-" * 40)
+        email_config_ok = self.test_email_configuration_health_check()
+        
+        if not email_config_ok:
+            print("\n⚠️  WARNING: Email configuration not detected. Email tests may fail.")
+        
+        print("\n" + "-" * 40)
+        print("GMAIL SMTP EMAIL NOTIFICATION TESTS")
+        print("-" * 40)
+        
+        # Test 3: RSVP with email notification (attending)
+        self.test_rsvp_with_email_notification_attending()
+        
+        # Test 4: RSVP with email notification (not attending)
+        self.test_rsvp_with_email_notification_not_attending()
+        
+        # Test 5: RSVP with email notification (minimal data)
+        self.test_rsvp_with_email_notification_minimal_data()
+        
         print("\n" + "-" * 40)
         print("RSVP FUNCTIONALITY TESTS")
         print("-" * 40)
         
-        # Test 2: Create valid RSVP
+        # Test 6: Create valid RSVP
         self.test_create_valid_rsvp()
         
-        # Test 3: Create RSVP with optional fields
+        # Test 7: Create RSVP with optional fields
         self.test_create_rsvp_with_optional_fields()
         
-        # Test 4: Create RSVP for non-attending
+        # Test 8: Create RSVP for non-attending
         self.test_create_rsvp_not_attending()
         
-        # Test 5: Validation errors
+        # Test 9: Validation errors
         print("\n" + "-" * 40)
         print("VALIDATION TESTS")
         print("-" * 40)
         self.test_validation_errors()
         
-        # Test 6: Get all RSVPs
+        # Test 10: Get all RSVPs
         print("\n" + "-" * 40)
         print("DATA RETRIEVAL TESTS")
         print("-" * 40)
         self.test_get_all_rsvps()
         
-        # Test 7: Get RSVP stats
+        # Test 11: Get RSVP stats
         self.test_get_rsvp_stats()
         
-        # Test 8: Get RSVP by ID
+        # Test 12: Get RSVP by ID
         self.test_get_rsvp_by_id()
         
-        # Test 9: Error handling
+        # Test 13: Error handling
         print("\n" + "-" * 40)
         print("ERROR HANDLING TESTS")
         print("-" * 40)
@@ -506,6 +528,14 @@ class BackendTester:
             print(f"\nCreated {len(self.created_rsvp_ids)} test RSVPs:")
             for rsvp_id in self.created_rsvp_ids:
                 print(f"  - {rsvp_id}")
+        
+        # Email notification summary
+        email_tests = [r for r in self.test_results if 'Email' in r['test']]
+        if email_tests:
+            print(f"\n📧 EMAIL NOTIFICATION TESTS:")
+            for result in email_tests:
+                status = "✅" if result['success'] else "❌"
+                print(f"{status} {result['test']}: {result['message']}")
         
         # Detailed results
         print("\nDetailed Results:")
