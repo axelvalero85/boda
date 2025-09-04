@@ -37,7 +37,7 @@ const Navigation = () => {
                 isScrolled ? 'bg-gray-100' : 'bg-white/20 backdrop-blur-sm border border-white/30'
               }`}>
                 <Heart className={`w-4 h-4 transition-colors duration-300 ${
-                  isScrolled ? 'text-rose-500 fill-rose-500' : 'text-white fill-white'
+                  isScrolled ? 'text-gray-400 fill-gray-400' : 'text-white fill-white'
                 }`} />
               </div>
               <div className="text-xl font-light tracking-[0.15em]">
