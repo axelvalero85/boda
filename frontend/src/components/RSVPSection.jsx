@@ -71,7 +71,7 @@ const RSVPSection = () => {
   };
 
   return (
-    <section id="rsvp" className="py-20" style={{ backgroundColor: '#9ca06e' }}>
+    <section id="rsvp" className="py-20" style={{ backgroundColor: '#d6d6c6' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Simple Header */}
