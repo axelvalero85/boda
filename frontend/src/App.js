@@ -52,37 +52,37 @@ const VenueSection = () => {
   const { venue, timeline } = weddingData;
   
   return (
-    <section id="venue" className="py-20 bg-gray-50">
+    <section id="venue" className="py-20 bg-amber-100">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-amber-900 mb-6 tracking-wide">
               Detalles del Evento
             </h2>
-            <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
+            <div className="w-24 h-px bg-amber-600 mx-auto mb-8"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Venue Info */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-amber-200">
               <div className="flex items-center mb-6">
-                <MapPin className="w-6 h-6 text-gray-600 mr-3" />
-                <h3 className="text-2xl font-light text-gray-800">Ubicación</h3>
+                <MapPin className="w-6 h-6 text-amber-700 mr-3" />
+                <h3 className="text-2xl font-light text-amber-900">Ubicación</h3>
               </div>
               
               <div className="space-y-3">
-                <p className="text-xl text-gray-800 font-medium">{venue.name}</p>
-                <p className="text-gray-600">{venue.address}</p>
-                <p className="text-gray-600 italic">{venue.description}</p>
+                <p className="text-xl text-amber-800 font-medium">{venue.name}</p>
+                <p className="text-amber-700">{venue.address}</p>
+                <p className="text-amber-700 italic">{venue.description}</p>
               </div>
             </div>
 
             {/* Timeline */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-amber-200">
               <div className="flex items-center mb-6">
-                <Clock className="w-6 h-6 text-gray-600 mr-3" />
-                <h3 className="text-2xl font-light text-gray-800">Cronograma</h3>
+                <Clock className="w-6 h-6 text-amber-700 mr-3" />
+                <h3 className="text-2xl font-light text-amber-900">Cronograma</h3>
               </div>
               
               <div className="space-y-4">
@@ -92,9 +92,9 @@ const VenueSection = () => {
                   { event: 'Recepción', time: timeline.reception },
                   { event: 'Fiesta', time: timeline.party }
                 ].map((item, index) => (
-                  <div key={item.event} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                    <span className="text-gray-700">{item.event}</span>
-                    <span className="font-medium text-gray-800">{item.time}</span>
+                  <div key={item.event} className="flex justify-between items-center py-2 border-b border-amber-200 last:border-b-0">
+                    <span className="text-amber-700">{item.event}</span>
+                    <span className="font-medium text-amber-800">{item.time}</span>
                   </div>
                 ))}
               </div>
