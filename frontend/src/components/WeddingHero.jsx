@@ -18,7 +18,7 @@ const WeddingHero = () => {
           alt="Axel y Dani - Pareja"
           className="w-full h-full object-cover"
           style={{
-            objectPosition: 'center 35%', // Adjusted to show both subjects centered
+            objectPosition: '40% 35%', // Adjusted to center both subjects perfectly on mobile
             transformOrigin: 'center center'
           }}
         />
