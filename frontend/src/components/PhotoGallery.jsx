@@ -183,11 +183,11 @@ const PhotoGallery = () => {
             {/* Image Info */}
             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
               <div className="bg-black/70 backdrop-blur-md text-white px-8 py-4 rounded-full border border-white/10 flex items-center space-x-4">
-                <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                <Heart className="w-4 h-4 text-gray-400 fill-gray-400" />
                 <span className="text-sm font-medium">
                   {selectedPhoto.index + 1} de {photos.length}
                 </span>
-                <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                <Heart className="w-4 h-4 text-gray-400 fill-gray-400" />
               </div>
             </div>
           </div>
