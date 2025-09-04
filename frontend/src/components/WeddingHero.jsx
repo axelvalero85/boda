@@ -32,16 +32,16 @@ const WeddingHero = () => {
           {couple.groom} & {couple.bride}
         </h1>
         
-        {/* Wedding Date */}
-        <div className="mb-8 space-y-3">
+        {/* Wedding Date and Venue */}
+        <div className="mb-10 space-y-2">
           <p className="text-xl md:text-2xl font-light tracking-wide">
             {couple.weddingDate}
           </p>
           <p className="text-lg md:text-xl font-light opacity-90">
-            {venue.name}
+            Finca San Gabriel, La Cañada
           </p>
           <p className="text-base md:text-lg font-light opacity-80">
-            {venue.address}
+            Estado de México
           </p>
         </div>
         
