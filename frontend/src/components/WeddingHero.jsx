@@ -18,50 +18,94 @@ const WeddingHero = () => {
           alt="Axel y Dani - Pareja"
           className="w-full h-full object-cover"
         />
-        {/* Very subtle overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Sophisticated Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
       </div>
 
-      {/* Names - positioned slightly lower */}
-      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-4 z-20 text-center text-white transition-all duration-1000 ease-out ${
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated Floating Elements */}
+        <div className="absolute top-20 left-20 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-32 right-32 w-2 h-2 bg-white/20 rounded-full animate-ping"></div>
+        <div className="absolute bottom-40 left-40 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-white/20 rounded-full animate-ping delay-700"></div>
+        
+        {/* Geometric Decorations */}
+        <div className="absolute top-24 right-24 w-8 h-8 border border-white/10 rotate-45 animate-pulse"></div>
+        <div className="absolute bottom-24 left-24 w-6 h-6 border border-white/10 rounded-full animate-pulse delay-500"></div>
+      </div>
+
+      {/* Names with Enhanced Typography */}
+      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-4 z-20 text-center text-white transition-all duration-1500 ease-out ${
         isLoaded ? 'translate-y-4 opacity-100' : 'translate-y-14 opacity-0'
       }`}>
-        <h1 className="text-5xl md:text-7xl font-extralight tracking-wider">
-          {couple.groom} & {couple.bride}
+        {/* Decorative Line Above */}
+        <div className="flex items-center justify-center mb-8">
+          <div className="w-8 h-px bg-white/40"></div>
+          <div className="w-2 h-2 bg-white/60 rounded-full mx-4"></div>
+          <div className="w-8 h-px bg-white/40"></div>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-extralight tracking-[0.2em] mb-2 relative">
+          <span className="relative inline-block">
+            {couple.groom}
+            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+          </span>
+          <span className="mx-6 text-white/70 font-thin">&</span>
+          <span className="relative inline-block">
+            {couple.bride}
+            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+          </span>
         </h1>
-        <p className="text-lg md:text-xl font-light mt-2 opacity-90">
+        
+        <p className="text-lg md:text-xl font-light mt-4 opacity-90 tracking-widest">
           {couple.weddingDate}
         </p>
+
+        {/* Decorative Line Below */}
+        <div className="flex items-center justify-center mt-8">
+          <div className="w-12 h-px bg-white/40"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full mx-3"></div>
+          <div className="w-6 h-px bg-white/40"></div>
+          <div className="w-1 h-1 bg-white/60 rounded-full mx-3"></div>
+          <div className="w-12 h-px bg-white/40"></div>
+        </div>
       </div>
 
-      {/* Venue info - positioned bottom left */}
+      {/* Enhanced Venue info - positioned bottom left */}
       <div className={`absolute bottom-8 left-8 z-20 text-white transition-all duration-1000 ease-out delay-300 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
-        <p className="text-sm md:text-base font-light opacity-80">
-          Finca San Gabriel, La Cañada
-        </p>
-        <p className="text-sm md:text-base font-light opacity-80">
-          Estado de México
-        </p>
+        <div className="bg-black/20 backdrop-blur-md rounded-lg p-4 border border-white/10">
+          <p className="text-sm md:text-base font-light opacity-90 tracking-wide">
+            Finca San Gabriel, La Cañada
+          </p>
+          <p className="text-sm md:text-base font-light opacity-80">
+            Estado de México
+          </p>
+        </div>
       </div>
 
-      {/* RSVP button - positioned bottom right */}
+      {/* Enhanced RSVP button - positioned bottom right */}
       <div className={`absolute bottom-8 right-8 z-20 transition-all duration-1000 ease-out delay-500 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         <button 
           onClick={() => document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' })}
-          className="px-8 py-3 border-2 border-white text-white text-base font-medium tracking-wide uppercase hover:bg-white hover:text-gray-800 transition-all duration-300 hover:scale-105"
+          className="group relative bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-3 text-base font-medium tracking-widest uppercase transition-all duration-500 hover:scale-105 overflow-hidden"
         >
-          RSVP
+          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <span className="relative z-10">RSVP</span>
         </button>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white animate-bounce opacity-60">
-        <div className="w-5 h-8 border border-white rounded-full flex justify-center">
-          <div className="w-0.5 h-2 bg-white rounded-full mt-1 animate-pulse"></div>
+      {/* Enhanced Scroll Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white animate-bounce opacity-70">
+        <div className="flex flex-col items-center">
+          <div className="w-5 h-8 border border-white/40 rounded-full flex justify-center mb-2">
+            <div className="w-0.5 h-2 bg-white/60 rounded-full mt-1.5 animate-pulse"></div>
+          </div>
+          <div className="text-xs tracking-widest opacity-60">SCROLL</div>
         </div>
       </div>
     </section>
