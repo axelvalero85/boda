@@ -62,7 +62,7 @@ class RSVPCreate(BaseModel):
     phone: Optional[str] = Field(None, max_length=20)
     attendance: str = Field(..., pattern="^(si|no)$")
     allergies: Optional[str] = Field(None, max_length=500)
-    transport: Optional[str] = Field(None, regex="^(si|no)?$")
+    transport: Optional[str] = Field(None, pattern="^(si|no)?$")
     message: Optional[str] = Field(None, max_length=1000)
 
 class RSVPStats(BaseModel):
