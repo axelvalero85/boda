@@ -39,7 +39,7 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#9ca06e' }}>
+    <section className="relative py-32 overflow-hidden" id="countdown" style={{ backgroundColor: '#9ca06e' }}>
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
