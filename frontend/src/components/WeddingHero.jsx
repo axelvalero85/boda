@@ -48,7 +48,7 @@ const WeddingHero = () => {
         {/* CTA Button */}
         <button 
           onClick={() => document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' })}
-          className="px-10 py-3 border-2 border-white text-white text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-gray-800 transition-all duration-300 hover:scale-105"
+          className="px-12 py-4 border-2 border-white text-white text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-gray-800 transition-all duration-300 hover:scale-105"
         >
           RSVP
         </button>
