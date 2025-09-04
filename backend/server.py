@@ -257,6 +257,18 @@ async def create_rsvp(rsvp_data: RSVPCreate):
         
         if result.inserted_id:
             logger.info(f"RSVP created successfully for {rsvp_obj.name} ({rsvp_obj.email})")
+            
+            # Send email notification immediately
+            try:
+                email_sent = email_service.send_rsvp_notification(rsvp_obj.dict())
+                if email_sent:
+                    logger.info(f"Email notification sent successfully for RSVP {rsvp_obj.id}")
+                else:
+                    logger.warning(f"Failed to send email notification for RSVP {rsvp_obj.id}")
+            except Exception as email_error:
+                logger.error(f"Email notification error for RSVP {rsvp_obj.id}: {str(email_error)}")
+                # Don't fail the RSVP creation if email fails
+            
             return rsvp_obj
         else:
             raise HTTPException(status_code=500, detail="Failed to save RSVP")
