@@ -38,19 +38,19 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden geometric-pattern" id="countdown" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Geometric background pattern overlay */}
+    <section className="relative py-32 overflow-hidden geometric-pattern-original" id="countdown" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Original geometric background pattern overlay */}
       <div className="absolute inset-0 geometric-pattern-subtle"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Header with Logo */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="text-center mb-20" animation="fade-up">
             <div className="flex items-center justify-center mb-8">
               <img 
-                src={logos.golden} 
+                src={logos.black} 
                 alt="Axel & Dani Logo" 
-                className="w-14 h-14 md:w-16 md:h-16 mr-4 opacity-80"
+                className="w-20 h-20 md:w-24 md:h-24 mr-6 opacity-90"
               />
               <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 tracking-[0.15em]">
                 Countdown

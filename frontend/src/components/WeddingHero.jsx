@@ -11,7 +11,7 @@ const WeddingHero = () => {
 
   return (
     <section id="wedding" className="relative min-h-screen flex items-end justify-center overflow-hidden">
-      {/* Hero Background Image - Fixed positioning for iPhone to show both subjects */}
+      {/* Hero Background Image - NO PATTERN, clean photo */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/jp8noucl_Header.JPG"

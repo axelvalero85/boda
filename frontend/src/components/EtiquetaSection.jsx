@@ -3,13 +3,13 @@ import { AnimatedSection } from './ScrollAnimations';
 
 const EtiquetaSection = () => {
   return (
-    <section className="relative py-32 overflow-hidden geometric-pattern" id="etiqueta" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Geometric background pattern overlay */}
+    <section className="relative py-32 overflow-hidden geometric-pattern-original" id="etiqueta" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Original geometric background pattern overlay */}
       <div className="absolute inset-0 geometric-pattern-subtle"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
-          {/* Header with Tonal-inspired animations */}
+          {/* Header */}
           <AnimatedSection className="text-center mb-20" animation="fade-up">
             <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 tracking-[0.15em]">
               Etiqueta

@@ -70,13 +70,13 @@ const RSVPSection = () => {
   };
 
   return (
-    <section id="rsvp" className="py-20 geometric-pattern" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Geometric background pattern overlay */}
+    <section id="rsvp" className="py-20 geometric-pattern-original" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Original geometric background pattern overlay */}
       <div className="absolute inset-0 geometric-pattern-subtle"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Header with Tonal-inspired animations */}
+          {/* Header */}
           <AnimatedSection className="text-center mb-16" animation="fade-up">
             <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
               Acompáñanos

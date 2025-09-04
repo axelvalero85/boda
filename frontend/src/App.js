@@ -16,19 +16,19 @@ const GiftSection = () => {
   const { giftRegistry, logos } = weddingData;
   
   return (
-    <section id="gifts" className="py-20 geometric-pattern" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Geometric background pattern overlay */}
+    <section id="gifts" className="py-20 geometric-pattern-original" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Original geometric background pattern overlay */}
       <div className="absolute inset-0 geometric-pattern-subtle"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Header with Logo */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="mb-16" animation="fade-up">
             <div className="flex items-center justify-center mb-8">
               <img 
-                src={logos.golden} 
+                src={logos.black} 
                 alt="Axel & Dani Logo" 
-                className="w-16 h-16 md:w-20 md:h-20 mr-4 opacity-80"
+                className="w-24 h-24 md:w-28 md:h-28 mr-6 opacity-90"
               />
               <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 tracking-wide">
                 Mesa de Regalos
@@ -80,19 +80,19 @@ const VenueSection = () => {
   const { venue, timeline, logos } = weddingData;
   
   return (
-    <section id="venue" className="py-20 geometric-pattern" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Geometric background pattern overlay */}
+    <section id="venue" className="py-20 geometric-pattern-original" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Original geometric background pattern overlay */}
       <div className="absolute inset-0 geometric-pattern-subtle"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Header with Logo */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="text-center mb-16" animation="fade-up">
             <div className="flex items-center justify-center mb-8">
               <img 
-                src={logos.golden} 
+                src={logos.black} 
                 alt="Axel & Dani Logo" 
-                className="w-16 h-16 md:w-20 md:h-20 mr-4 opacity-80"
+                className="w-24 h-24 md:w-28 md:h-28 mr-6 opacity-90"
               />
               <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 tracking-wide">
                 Detalles del Evento
@@ -194,12 +194,12 @@ const VenueSection = () => {
                   ))}
                 </div>
 
-                {/* Small logo at bottom of timeline */}
+                {/* Larger black logo at bottom of timeline */}
                 <div className="flex justify-center pt-4">
                   <img 
-                    src={logos.golden} 
+                    src={logos.black} 
                     alt="Axel & Dani Logo" 
-                    className="w-12 h-12 opacity-60"
+                    className="w-16 h-16 opacity-70"
                   />
                 </div>
               </div>
@@ -218,7 +218,7 @@ const Footer = () => {
     <footer className="text-white py-16" style={{ backgroundColor: '#917955' }}>
       <div className="container mx-auto px-6 text-center">
         <AnimatedSection className="max-w-2xl mx-auto" animation="fade-up">
-          {/* Black Logo in Footer */}
+          {/* Black Logo in Footer - keep same size as requested */}
           <div className="mb-8">
             <img 
               src={logos.black} 
