@@ -53,7 +53,9 @@ const Navigation = () => {
             <div className="hidden md:flex items-center space-x-10">
               {[
                 { id: 'wedding', label: 'Boda' },
+                { id: 'countdown', label: 'Countdown' },
                 { id: 'gallery', label: 'Galería' },
+                { id: 'etiqueta', label: 'Etiqueta' },
                 { id: 'venue', label: 'Ubicación' },
                 { id: 'gifts', label: 'Regalos' }
               ].map((item) => (
