@@ -14,7 +14,7 @@ const WeddingHero = () => {
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/ecphc7fm_header.png"
+          src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/wjw341lu_b7a4541b-5ad6-43df-9945-69d829a0e463.JPG"
           alt="Axel y Dani - Pareja"
           className="w-full h-full object-cover"
         />
