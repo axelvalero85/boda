@@ -149,15 +149,16 @@ const RSVPSection = () => {
                     <label className="block text-sm font-medium mb-2" style={{ color: '#2e2e22' }}>
                       ¿Asistirás? *
                     </label>
-                    <Select onValueChange={(value) => handleInputChange('attendance', value)}>
-                      <SelectTrigger className="h-12 border-gray-300 focus:border-gray-600 focus:ring-gray-600 transition-all duration-300 hover:border-gray-400">
-                        <SelectValue placeholder="Por favor selecciona" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="si">Sí, asistiré</SelectItem>
-                        <SelectItem value="no">No podré asistir</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <select
+                      value={formData.attendance}
+                      onChange={(e) => handleInputChange('attendance', e.target.value)}
+                      className="h-12 w-full border border-gray-300 focus:border-gray-600 focus:ring-gray-600 transition-all duration-300 hover:border-gray-400 px-3 py-2 bg-white"
+                      style={{ color: '#2e2e22' }}
+                    >
+                      <option value="" disabled>Por favor selecciona</option>
+                      <option value="si">Sí, asistiré</option>
+                      <option value="no">No podré asistir</option>
+                    </select>
                   </div>
                 </StaggeredAnimation>
 
