@@ -38,6 +38,11 @@ export const weddingData = {
       id: 5,
       url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/29yoedq1_Dani.JPG",
       alt: "Dani en el bosque"
+    },
+    {
+      id: 6,
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/hu721xpq_Caballo.png",
+      alt: "Momento romántico junto al caballo"
     }
   ],
   
