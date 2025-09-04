@@ -71,7 +71,7 @@ const RSVPSection = () => {
   };
 
   return (
-    <section id="rsvp" className="py-20" style={{ backgroundColor: '#d6d6c6' }}>
+    <section id="rsvp" className="py-20" style={{ backgroundColor: '#eaeae2' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Simple Header */}
@@ -86,9 +86,9 @@ const RSVPSection = () => {
             </p>
           </div>
 
-          {/* Clean Form */}
+          {/* Clean Form - No rounded corners */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-10 border border-gray-300">
+            <div className="bg-white/95 backdrop-blur-sm shadow-lg p-10 border border-gray-300">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email */}
                 <div className="grid md:grid-cols-2 gap-6">
@@ -150,7 +150,7 @@ const RSVPSection = () => {
 
                 {/* Guest Details (if attending) */}
                 {formData.attendance === 'si' && (
-                  <div className="bg-gray-50 p-6 rounded-lg space-y-4">
+                  <div className="bg-gray-50 p-6 space-y-4 border border-gray-200">
                     <h3 className="text-lg font-medium text-gray-800 mb-4">Detalles Adicionales</h3>
 
                     <div className="grid md:grid-cols-2 gap-4">
@@ -218,7 +218,14 @@ const RSVPSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-14 bg-gray-800 hover:bg-gray-900 text-white text-lg font-medium tracking-wide transition-all duration-300"
+                    className="w-full h-14 text-white text-lg font-medium tracking-wide transition-all duration-300"
+                    style={{ backgroundColor: '#917955' }}
+                    onMouseEnter={(e) => {
+                      if (!isSubmitting) e.target.style.backgroundColor = '#7a6747';
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isSubmitting) e.target.style.backgroundColor = '#917955';
+                    }}
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
