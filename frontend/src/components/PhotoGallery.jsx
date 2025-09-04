@@ -64,7 +64,7 @@ const PhotoGallery = () => {
               <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full"></div>
               <div className="relative w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto border border-white/30">
                 <Camera className="w-10 h-10 text-white" />
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-rose-400/80 to-pink-500/80 rounded-full flex items-center justify-center">
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-gray-400/80 to-gray-500/80 rounded-full flex items-center justify-center">
                   <Heart className="w-4 h-4 text-white fill-white" />
                 </div>
               </div>
