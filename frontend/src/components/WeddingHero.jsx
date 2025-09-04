@@ -22,7 +22,7 @@ const WeddingHero = () => {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Content centered */}
+      {/* Content centered at bottom to avoid covering faces */}
       <div className={`relative z-20 text-center text-white max-w-4xl mx-auto px-8 transition-all duration-1000 ease-out ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
