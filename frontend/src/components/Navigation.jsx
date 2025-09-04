@@ -116,13 +116,13 @@ const Navigation = () => {
           {/* Close Button */}
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-300 hover:bg-white/20"
+            className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-300 hover:bg-white/20"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           </button>
 
           {/* Navigation Items */}
-          <div className="space-y-8 px-8">
+          <div className="space-y-4 px-6 w-full max-w-sm">
             {navigationItems.map((item, index) => (
               <div
                 key={item.id}
@@ -131,15 +131,17 @@ const Navigation = () => {
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
                 }`}
-                style={{ transitionDelay: `${index * 100 + 200}ms` }}
+                style={{ transitionDelay: `${index * 80 + 200}ms` }}
               >
                 <button 
                   onClick={() => scrollToSection(item.id)}
-                  className="group flex items-center justify-center space-x-4 w-full max-w-xs mx-auto bg-white/5 backdrop-blur-sm border border-white/10 p-6 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
+                  className="group flex items-center justify-between w-full bg-white/5 backdrop-blur-sm border border-white/10 p-4 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
                 >
-                  <span className="text-2xl">{item.icon}</span>
-                  <span className="text-xl font-light tracking-[0.1em]">{item.label}</span>
-                  <ChevronRight className="w-5 h-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                  <div className="flex items-center space-x-3">
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-lg font-light tracking-[0.1em]">{item.label}</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                 </button>
               </div>
             ))}
@@ -151,24 +153,36 @@ const Navigation = () => {
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
-              style={{ transitionDelay: `${navigationItems.length * 100 + 200}ms` }}
+              style={{ transitionDelay: `${navigationItems.length * 80 + 300}ms` }}
             >
               <button 
                 onClick={() => scrollToSection('rsvp')}
-                className="w-full max-w-xs mx-auto bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-md border-2 border-white/30 text-white p-6 text-xl font-medium tracking-[0.1em] uppercase transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:border-white/50 hover:scale-105 mt-8"
+                className="w-full bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-md border-2 border-white/30 text-white p-4 text-lg font-medium tracking-[0.1em] uppercase transition-all duration-300 hover:from-white/30 hover:to-white/20 hover:border-white/50 hover:scale-105 mt-6"
               >
                 <div className="flex items-center justify-center space-x-3">
                   <span>💌</span>
-                  <span>CONFIRMAR ASISTENCIA</span>
+                  <span>RSVP</span>
                 </div>
               </button>
             </div>
           </div>
 
+          {/* Wedding Info */}
+          <div className={`mt-8 text-center text-white/70 transform transition-all duration-700 ${
+            isMobileMenuOpen 
+              ? 'translate-y-0 opacity-100' 
+              : 'translate-y-8 opacity-0'
+          }`}
+          style={{ transitionDelay: `${navigationItems.length * 80 + 500}ms` }}
+          >
+            <p className="text-sm tracking-widest">7 de Febrero, 2026</p>
+            <p className="text-xs mt-1 tracking-wider">Finca San Gabriel, La Cañada</p>
+          </div>
+
           {/* Decorative Elements */}
-          <div className="absolute top-20 left-20 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-2 h-2 bg-white/20 rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse delay-300"></div>
+          <div className="absolute top-20 left-8 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-8 w-2 h-2 bg-white/20 rounded-full animate-ping"></div>
+          <div className="absolute top-1/3 right-8 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse delay-300"></div>
         </div>
       </div>
     </>
