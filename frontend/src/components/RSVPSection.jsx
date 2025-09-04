@@ -88,7 +88,7 @@ const RSVPSection = () => {
 
           {/* Clean Form */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-10 border border-white/20">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-10 border border-gray-300">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email */}
                 <div className="grid md:grid-cols-2 gap-6">
