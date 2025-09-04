@@ -6,10 +6,7 @@ const EtiquetaSection = () => {
   const { logos } = weddingData;
 
   return (
-    <section className="relative py-32 overflow-hidden geometric-pattern-original" id="etiqueta" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Original geometric background pattern overlay */}
-      <div className="absolute inset-0 geometric-pattern-subtle"></div>
-
+    <section className="relative py-32 overflow-hidden" id="etiqueta" style={{ backgroundColor: '#ae9c8f' }}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header with Black Logo - Larger */}
