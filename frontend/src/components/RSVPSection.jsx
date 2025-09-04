@@ -71,41 +71,41 @@ const RSVPSection = () => {
   };
 
   return (
-    <section id="rsvp" className="py-20 bg-green-50">
+    <section id="rsvp" className="py-20" style={{ backgroundColor: '#9ca06e' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Simple Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-green-900 mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-white mb-6 tracking-wide">
               Acompáñanos
             </h2>
-            <div className="w-24 h-px bg-green-600 mx-auto mb-8"></div>
-            <p className="text-lg text-green-800 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 h-px bg-white/60 mx-auto mb-8"></div>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Tu presencia hará de nuestro día aún más especial. Por favor confirma tu asistencia 
-              antes del <span className="font-medium text-green-900">{weddingData.rsvp.deadline}</span>
+              antes del <span className="font-medium text-white">{weddingData.rsvp.deadline}</span>
             </p>
           </div>
 
           {/* Clean Form */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-10 border border-green-200">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-10 border border-white/20">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-green-800 mb-2">
+                    <label className="block text-sm font-medium text-gray-800 mb-2">
                       Nombre Completo *
                     </label>
                     <Input
                       placeholder="Tu nombre completo"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
-                      className="h-12 border-green-300 focus:border-green-600 focus:ring-green-600"
+                      className="h-12 border-gray-300 focus:border-gray-600 focus:ring-gray-600"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-green-800 mb-2">
+                    <label className="block text-sm font-medium text-gray-800 mb-2">
                       Email *
                     </label>
                     <Input
@@ -113,7 +113,7 @@ const RSVPSection = () => {
                       placeholder="tu@email.com"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="h-12 border-green-300 focus:border-green-600 focus:ring-green-600"
+                      className="h-12 border-gray-300 focus:border-gray-600 focus:ring-gray-600"
                     />
                   </div>
                 </div>
@@ -121,23 +121,23 @@ const RSVPSection = () => {
                 {/* Phone and Attendance */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-green-800 mb-2">
+                    <label className="block text-sm font-medium text-gray-800 mb-2">
                       Teléfono
                     </label>
                     <Input
                       placeholder="Tu número de teléfono"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className="h-12 border-green-300 focus:border-green-600 focus:ring-green-600"
+                      className="h-12 border-gray-300 focus:border-gray-600 focus:ring-gray-600"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-green-800 mb-2">
+                    <label className="block text-sm font-medium text-gray-800 mb-2">
                       ¿Asistirás? *
                     </label>
                     <Select onValueChange={(value) => handleInputChange('attendance', value)}>
-                      <SelectTrigger className="h-12 border-green-300 focus:border-green-600 focus:ring-green-600">
+                      <SelectTrigger className="h-12 border-gray-300 focus:border-gray-600 focus:ring-gray-600">
                         <SelectValue placeholder="Por favor selecciona" />
                       </SelectTrigger>
                       <SelectContent>
@@ -150,12 +150,12 @@ const RSVPSection = () => {
 
                 {/* Guest Details (if attending) */}
                 {formData.attendance === 'si' && (
-                  <div className="bg-green-50 p-6 rounded-lg space-y-4">
-                    <h3 className="text-lg font-medium text-green-800 mb-4">Detalles Adicionales</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg space-y-4">
+                    <h3 className="text-lg font-medium text-gray-800 mb-4">Detalles Adicionales</h3>
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-green-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
                           Número de invitados
                         </label>
                         <Select onValueChange={(value) => handleInputChange('guests', value)} defaultValue="1">
@@ -173,7 +173,7 @@ const RSVPSection = () => {
 
                       {parseInt(formData.guests) > 1 && (
                         <div>
-                          <label className="block text-sm font-medium text-green-700 mb-2">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
                             Nombres de acompañantes
                           </label>
                           <Input
@@ -187,7 +187,7 @@ const RSVPSection = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-green-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Alergias o restricciones alimentarias
                       </label>
                       <Input
@@ -202,14 +202,14 @@ const RSVPSection = () => {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-medium text-green-800 mb-2">
+                  <label className="block text-sm font-medium text-gray-800 mb-2">
                     Mensaje especial (opcional)
                   </label>
                   <Textarea
                     placeholder="Comparte un mensaje especial para los novios..."
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    className="min-h-24 border-green-300 focus:border-green-600 focus:ring-green-600"
+                    className="min-h-24 border-gray-300 focus:border-gray-600 focus:ring-gray-600"
                   />
                 </div>
 
@@ -218,7 +218,7 @@ const RSVPSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-14 bg-green-800 hover:bg-green-900 text-white text-lg font-medium tracking-wide transition-all duration-300"
+                    className="w-full h-14 bg-gray-800 hover:bg-gray-900 text-white text-lg font-medium tracking-wide transition-all duration-300"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
