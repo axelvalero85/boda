@@ -80,9 +80,9 @@ const PhotoGallery = () => {
             {/* Decorative Elements */}
             <div className="flex items-center justify-center space-x-8 mb-10">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-white/60"></div>
-              <Heart className="w-6 h-6 text-rose-300/80 fill-rose-300/80" />
+              <Heart className="w-6 h-6 text-gray-300 fill-gray-300" />
               <div className="w-32 h-px bg-gradient-to-r from-white/60 via-white/80 to-white/60"></div>
-              <Heart className="w-6 h-6 text-rose-300/80 fill-rose-300/80" />
+              <Heart className="w-6 h-6 text-gray-300 fill-gray-300" />
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-white/60"></div>
             </div>
             
