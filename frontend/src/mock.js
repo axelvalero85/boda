@@ -16,33 +16,28 @@ export const weddingData = {
   photos: [
     {
       id: 1,
-      url: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Pareja feliz"
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/3besqdva_Dos.JPG",
+      alt: "Axel y Dani juntos en el bosque"
     },
     {
       id: 2,
-      url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Momento romántico"
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/2qjwnbw5_Anillos.JPG",
+      alt: "Los anillos de boda"
     },
     {
       id: 3,
-      url: "https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Anillo de compromiso"
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/3dz7ma6t_Axel.JPG",
+      alt: "Axel en el bosque"
     },
     {
       id: 4,
-      url: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Caminando juntos"
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/41bm201s_Pasto.JPG",
+      alt: "Pareja sentada en el pasto"
     },
     {
       id: 5,
-      url: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Abrazo tierno"
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Risas y alegría"
+      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/29yoedq1_Dani.JPG",
+      alt: "Dani en el bosque"
     }
   ],
   
