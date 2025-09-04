@@ -28,7 +28,7 @@ const WeddingHero = () => {
       }`}>
         
         {/* Names */}
-        <h1 className="text-5xl md:text-7xl font-extralight mb-6 tracking-wider leading-tight">
+        <h1 className="text-6xl md:text-8xl font-extralight mb-6 tracking-wider">
           {couple.groom} & {couple.bride}
         </h1>
         
