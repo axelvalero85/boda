@@ -170,37 +170,11 @@ const RSVPSection = () => {
                   >
                     <h3 className="text-lg font-medium mb-4" style={{ color: '#2e2e22' }}>Detalles Adicionales</h3>
 
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium mb-2" style={{ color: '#2e2e22' }}>
-                          Número de invitados
-                        </label>
-                        <Select onValueChange={(value) => handleInputChange('guests', value)} defaultValue="1">
-                          <SelectTrigger className="h-12">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="1">Solo yo</SelectItem>
-                            <SelectItem value="2">2 personas</SelectItem>
-                            <SelectItem value="3">3 personas</SelectItem>
-                            <SelectItem value="4">4 personas</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      {parseInt(formData.guests) > 1 && (
-                        <div>
-                          <label className="block text-sm font-medium mb-2" style={{ color: '#2e2e22' }}>
-                            Nombres de acompañantes
-                          </label>
-                          <Input
-                            placeholder="Nombres de tus invitados"
-                            value={formData.guestNames}
-                            onChange={(e) => handleInputChange('guestNames', e.target.value)}
-                            className="h-12"
-                          />
-                        </div>
-                      )}
+                    {/* Gentle message about guest limit */}
+                    <div className="mb-4 p-3 bg-amber-50 border border-amber-200">
+                      <p className="text-sm" style={{ color: '#2e2e22' }}>
+                        Por favor, limítate al número de personas confirmadas en tu invitación. ¡Gracias por tu comprensión! 💕
+                      </p>
                     </div>
 
                     <div>
