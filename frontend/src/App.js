@@ -71,10 +71,23 @@ const VenueSection = () => {
                 <h3 className="text-2xl font-light text-gray-900">Ubicación</h3>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <p className="text-xl text-gray-800 font-medium">{venue.name}</p>
                 <p className="text-gray-700">{venue.address}</p>
                 <p className="text-gray-700 italic">{venue.description}</p>
+                
+                {/* Google Maps Link */}
+                <div className="pt-4">
+                  <a
+                    href="https://www.google.com/maps/dir//Av+Lomas+de+San+Juan+San+Juan+Yautepec+1000,+52767+La+Ca%C3%B1ada,+M%C3%A9x./@19.3280767,-99.4457452,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x85d207ff6633297b:0x209ab36d9cc15444!2m2!1d-99.3633345!2d19.328085?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-3 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white text-sm font-medium tracking-wide uppercase rounded-lg transition-all duration-300 hover:scale-105"
+                  >
+                    <MapPin className="w-5 h-5" />
+                    <span>Ver en Google Maps</span>
+                  </a>
+                </div>
               </div>
             </div>
 
