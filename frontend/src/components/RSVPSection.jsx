@@ -3,10 +3,10 @@ import { Check } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
-import { saveRSVP, weddingData } from '../mock';
+import { weddingData } from '../mock';
 import { AnimatedSection, StaggeredAnimation } from './ScrollAnimations';
+import ApiService from '../services/api';
 
 const RSVPSection = () => {
   const { toast } = useToast();
@@ -44,12 +44,32 @@ const RSVPSection = () => {
     setIsSubmitting(true);
     
     try {
-      await saveRSVP(formData);
+      // Prepare data for API
+      const rsvpData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone?.trim() || null,
+        attendance: formData.attendance,
+        allergies: formData.allergies?.trim() || null,
+        transport: formData.transport || null,
+        message: formData.message?.trim() || null
+      };
+
+      // Remove empty strings and convert to null
+      Object.keys(rsvpData).forEach(key => {
+        if (rsvpData[key] === '') {
+          rsvpData[key] = null;
+        }
+      });
+
+      const response = await ApiService.createRSVP(rsvpData);
+      
       toast({
         title: "¡RSVP Enviado!",
-        description: "¡Gracias por confirmar tu asistencia!",
+        description: `¡Gracias ${response.name} por confirmar tu asistencia!`,
       });
       
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -59,10 +79,12 @@ const RSVPSection = () => {
         transport: '',
         message: ''
       });
+      
     } catch (error) {
+      console.error('RSVP submission error:', error);
       toast({
-        title: "Error",
-        description: "Hubo un problema al enviar tu respuesta.",
+        title: "Error al enviar RSVP",
+        description: error.message || "Hubo un problema al enviar tu respuesta. Por favor intenta nuevamente.",
         variant: "destructive"
       });
     } finally {
