@@ -120,7 +120,9 @@ const Navigation = () => {
             <div className="space-y-8">
               {[
                 { id: 'wedding', label: 'Boda' },
+                { id: 'countdown', label: 'Countdown' },
                 { id: 'gallery', label: 'Galería' },
+                { id: 'etiqueta', label: 'Etiqueta' },
                 { id: 'venue', label: 'Ubicación' },
                 { id: 'gifts', label: 'Regalos' }
               ].map((item, index) => (
