@@ -38,13 +38,9 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden" id="countdown" style={{ backgroundColor: '#ae9c8f' }}>
-      {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10-10c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
+    <section className="relative py-32 overflow-hidden geometric-pattern" id="countdown" style={{ backgroundColor: '#ae9c8f' }}>
+      {/* Geometric background pattern overlay */}
+      <div className="absolute inset-0 geometric-pattern-subtle"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
