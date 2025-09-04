@@ -16,8 +16,6 @@ const RSVPSection = () => {
     email: '',
     phone: '',
     attendance: '',
-    guests: '1',
-    guestNames: '',
     allergies: '',
     transport: '',
     message: ''
