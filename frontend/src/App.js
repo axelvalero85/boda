@@ -3,8 +3,10 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from './components/Navigation';
 import WeddingHero from './components/WeddingHero';
+import CountdownSection from './components/CountdownSection';
 import RSVPSection from './components/RSVPSection';
 import PhotoGallery from './components/PhotoGallery';
+import EtiquetaSection from './components/EtiquetaSection';
 import { Toaster } from './components/ui/toaster';
 import { Gift, MapPin, Clock } from 'lucide-react';
 import { weddingData } from './mock';
@@ -145,7 +147,9 @@ const WeddingPage = () => {
     <div className="min-h-screen">
       <Navigation />
       <WeddingHero />
+      <CountdownSection />
       <PhotoGallery />
+      <EtiquetaSection />
       <VenueSection />
       <GiftSection />
       <RSVPSection />
