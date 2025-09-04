@@ -37,18 +37,18 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-green-100">
+    <section id="gallery" className="py-20" style={{ backgroundColor: '#86895d' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Simple Header */}
           <div className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-6xl font-extralight text-green-900 mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-white mb-6 tracking-wide">
               Nuestra Historia
             </h2>
-            <div className="w-24 h-px bg-green-600 mx-auto mb-8"></div>
-            <p className="text-lg text-green-800 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 h-px bg-white/60 mx-auto mb-8"></div>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Cada fotografía cuenta una parte de nuestra historia de amor. Estos momentos especiales nos trajeron hasta aquí.
             </p>
           </div>
@@ -58,7 +58,7 @@ const PhotoGallery = () => {
             {photos.map((photo, index) => (
               <div 
                 key={photo.id}
-                className="group relative aspect-square overflow-hidden bg-green-200 cursor-pointer transition-all duration-500 hover:shadow-xl hover:scale-[1.02] rounded-lg"
+                className="group relative aspect-square overflow-hidden bg-white/20 cursor-pointer transition-all duration-500 hover:shadow-xl hover:scale-[1.02] rounded-lg"
                 onClick={() => openLightbox(photo, index)}
               >
                 <img
