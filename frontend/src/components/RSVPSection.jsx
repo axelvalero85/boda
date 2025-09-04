@@ -19,6 +19,7 @@ const RSVPSection = () => {
     guests: '1',
     guestNames: '',
     allergies: '',
+    transport: '',
     message: ''
   });
 
@@ -58,6 +59,7 @@ const RSVPSection = () => {
         guests: '1',
         guestNames: '',
         allergies: '',
+        transport: '',
         message: ''
       });
     } catch (error) {
@@ -210,6 +212,27 @@ const RSVPSection = () => {
                         onChange={(e) => handleInputChange('allergies', e.target.value)}
                         className="h-12"
                       />
+                    </div>
+
+                    {/* Transport Option */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: '#2e2e22' }}>
+                        Servicio de Transporte
+                      </label>
+                      <div className="mb-3 p-3 bg-blue-50 border border-blue-200">
+                        <p className="text-sm" style={{ color: '#2e2e22' }}>
+                          Para tu comodidad, contaremos con servicios de camionetas desde algunos puntos de la ciudad hasta la locación y de regreso. Háznoslo saber si te gustaría utilizar este servicio.
+                        </p>
+                      </div>
+                      <Select onValueChange={(value) => handleInputChange('transport', value)}>
+                        <SelectTrigger className="h-12">
+                          <SelectValue placeholder="¿Te interesa el servicio de transporte?" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="si">Sí, me interesa el transporte</SelectItem>
+                          <SelectItem value="no">No, tengo transporte propio</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </AnimatedSection>
                 )}
