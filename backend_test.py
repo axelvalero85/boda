@@ -310,6 +310,137 @@ class BackendTester:
             self.log_test("Get Non-existent RSVP", False, f"Request error: {str(e)}")
             return False
     
+    def test_email_configuration_health_check(self):
+        """Test that health check shows email as configured"""
+        try:
+            response = requests.get(f"{API_BASE}/health", timeout=10)
+            
+            if response.status_code == 200:
+                data = response.json()
+                email_status = data.get('email')
+                
+                if email_status == 'configured':
+                    self.log_test("Email Configuration Health Check", True, 
+                                "Email service is properly configured", 
+                                f"Email status: {email_status}")
+                    return True
+                else:
+                    self.log_test("Email Configuration Health Check", False, 
+                                f"Email not configured properly. Status: {email_status}", data)
+                    return False
+            else:
+                self.log_test("Email Configuration Health Check", False, 
+                            f"HTTP {response.status_code}", response.text)
+                return False
+                
+        except Exception as e:
+            self.log_test("Email Configuration Health Check", False, f"Request error: {str(e)}")
+            return False
+    
+    def test_rsvp_with_email_notification_attending(self):
+        """Test RSVP creation with email notification - attending guest"""
+        test_data = {
+            "name": "Isabella Martínez",
+            "email": "isabella.martinez@example.com",
+            "phone": "555-0199",
+            "attendance": "si",
+            "allergies": "Mariscos",
+            "transport": "si",
+            "message": "¡Estamos muy emocionados por su boda! Será un día maravilloso."
+        }
+        
+        try:
+            print(f"\n📧 Testing RSVP creation with email notification...")
+            response = requests.post(f"{API_BASE}/rsvp", json=test_data, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data.get('id') and data.get('name') == test_data['name']:
+                    self.created_rsvp_ids.append(data['id'])
+                    self.log_test("RSVP with Email Notification (Attending)", True, 
+                                "RSVP created successfully - email should be sent to axelvalero@gmail.com", 
+                                f"ID: {data['id']}, Name: {data['name']}, Attendance: {data['attendance']}")
+                    return True, data['id']
+                else:
+                    self.log_test("RSVP with Email Notification (Attending)", False, 
+                                "Invalid response data", data)
+                    return False, None
+            else:
+                self.log_test("RSVP with Email Notification (Attending)", False, 
+                            f"HTTP {response.status_code}", response.text)
+                return False, None
+                
+        except Exception as e:
+            self.log_test("RSVP with Email Notification (Attending)", False, f"Request error: {str(e)}")
+            return False, None
+    
+    def test_rsvp_with_email_notification_not_attending(self):
+        """Test RSVP creation with email notification - not attending guest"""
+        test_data = {
+            "name": "Roberto Fernández",
+            "email": "roberto.fernandez@example.com",
+            "attendance": "no",
+            "message": "Lamentablemente no podremos asistir debido a compromisos familiares. ¡Les deseamos una boda maravillosa!"
+        }
+        
+        try:
+            print(f"\n📧 Testing RSVP creation (not attending) with email notification...")
+            response = requests.post(f"{API_BASE}/rsvp", json=test_data, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data.get('id') and data.get('attendance') == 'no':
+                    self.created_rsvp_ids.append(data['id'])
+                    self.log_test("RSVP with Email Notification (Not Attending)", True, 
+                                "Non-attending RSVP created successfully - email should be sent to axelvalero@gmail.com", 
+                                f"ID: {data['id']}, Name: {data['name']}, Attendance: {data['attendance']}")
+                    return True, data['id']
+                else:
+                    self.log_test("RSVP with Email Notification (Not Attending)", False, 
+                                "Invalid response data", data)
+                    return False, None
+            else:
+                self.log_test("RSVP with Email Notification (Not Attending)", False, 
+                            f"HTTP {response.status_code}", response.text)
+                return False, None
+                
+        except Exception as e:
+            self.log_test("RSVP with Email Notification (Not Attending)", False, f"Request error: {str(e)}")
+            return False, None
+    
+    def test_rsvp_with_email_notification_minimal_data(self):
+        """Test RSVP creation with minimal data - email notification should still work"""
+        test_data = {
+            "name": "Carmen Ruiz",
+            "email": "carmen.ruiz@example.com",
+            "attendance": "si"
+        }
+        
+        try:
+            print(f"\n📧 Testing RSVP creation (minimal data) with email notification...")
+            response = requests.post(f"{API_BASE}/rsvp", json=test_data, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data.get('id') and data.get('name') == test_data['name']:
+                    self.created_rsvp_ids.append(data['id'])
+                    self.log_test("RSVP with Email Notification (Minimal Data)", True, 
+                                "Minimal RSVP created successfully - email should be sent to axelvalero@gmail.com", 
+                                f"ID: {data['id']}, Name: {data['name']}")
+                    return True, data['id']
+                else:
+                    self.log_test("RSVP with Email Notification (Minimal Data)", False, 
+                                "Invalid response data", data)
+                    return False, None
+            else:
+                self.log_test("RSVP with Email Notification (Minimal Data)", False, 
+                            f"HTTP {response.status_code}", response.text)
+                return False, None
+                
+        except Exception as e:
+            self.log_test("RSVP with Email Notification (Minimal Data)", False, f"Request error: {str(e)}")
+            return False, None
+    
     def run_all_tests(self):
         """Run all backend tests"""
         print("=" * 60)
