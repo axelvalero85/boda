@@ -55,7 +55,7 @@ const PhotoGallery = () => {
               Nuestra Historia
             </h2>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light" style={{ color: '#2e2e22' }}>
               Cada fotografía cuenta una parte de nuestra historia de amor. 
               Estos momentos especiales nos trajeron hasta aquí, creando memorias que durarán para siempre.
             </p>

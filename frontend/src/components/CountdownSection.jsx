@@ -56,7 +56,7 @@ const CountdownSection = () => {
               Countdown
             </h2>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light" style={{ color: '#2e2e22' }}>
               El tiempo vuela cuando estás enamorado. ¡Mira cuánto falta para nuestro gran día!
             </p>
           </div>
@@ -77,12 +77,12 @@ const CountdownSection = () => {
                   {/* Content */}
                   <div className="relative z-10 text-center">
                     {/* Number */}
-                    <div className="text-3xl md:text-4xl font-light text-gray-800 mb-2 transition-all duration-500 group-hover:scale-110">
+                    <div className="text-3xl md:text-4xl font-light mb-2 transition-all duration-500 group-hover:scale-110" style={{ color: '#2e2e22' }}>
                       {unit.value.toString().padStart(2, '0')}
                     </div>
                     
                     {/* Label */}
-                    <div className="text-xs md:text-sm text-gray-600 font-medium tracking-wide uppercase">
+                    <div className="text-xs md:text-sm font-medium tracking-wide uppercase" style={{ color: '#2e2e22' }}>
                       {unit.label}
                     </div>
                     
@@ -103,7 +103,7 @@ const CountdownSection = () => {
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <div className="bg-white/60 backdrop-blur-sm px-8 py-4 inline-block border border-gray-300">
-              <p className="text-gray-800 text-lg font-light">
+              <p className="text-lg font-light" style={{ color: '#2e2e22' }}>
                 Ya casiiiiiiii!
               </p>
             </div>

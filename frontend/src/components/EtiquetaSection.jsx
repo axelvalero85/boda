@@ -26,7 +26,7 @@ const EtiquetaSection = () => {
               Etiqueta
             </h2>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-12">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light mb-12" style={{ color: '#2e2e22' }}>
               Queremos que te sientas cómodo y elegante en nuestro día especial.
             </p>
           </div>
@@ -44,7 +44,7 @@ const EtiquetaSection = () => {
               <div className="relative z-10 text-center">
                 {/* Main Dress Code */}
                 <div className="mb-8">
-                  <h3 className="text-4xl md:text-5xl font-light text-gray-800 mb-4 tracking-wide">
+                  <h3 className="text-4xl md:text-5xl font-light mb-4 tracking-wide" style={{ color: '#2e2e22' }}>
                     Formal
                   </h3>
                   
@@ -55,19 +55,19 @@ const EtiquetaSection = () => {
                 {/* Additional Details - No rounded corners */}
                 <div className="grid md:grid-cols-2 gap-8 text-left">
                   <div className="bg-gray-50/50 p-6 border border-gray-200/50">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#2e2e22' }}>
                       Para Ellas
                     </h4>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="leading-relaxed" style={{ color: '#2e2e22' }}>
                       Vestido largo o midi elegante. Colores sugeridos: tonos neutros, pasteles o colores clásicos.
                     </p>
                   </div>
                   
                   <div className="bg-gray-50/50 p-6 border border-gray-200/50">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#2e2e22' }}>
                       Para Ellos
                     </h4>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="leading-relaxed" style={{ color: '#2e2e22' }}>
                       Traje completo con corbata o pajarita. Camisa formal y zapatos de vestir. Colores clásicos preferidos.
                     </p>
                   </div>
@@ -75,8 +75,8 @@ const EtiquetaSection = () => {
 
                 {/* Note */}
                 <div className="mt-8 p-4 bg-white/50 border-l-4 border-gray-400">
-                  <p className="text-gray-600 text-sm italic">
-                    ¡Lo más importante es que te sientas cómodo y celebres con nosotros!
+                  <p className="text-sm italic" style={{ color: '#2e2e22' }}>
+                    ¡Por la noche hará frío lleva abrigo!
                   </p>
                 </div>
               </div>
