@@ -52,7 +52,7 @@ class RSVPResponse(BaseModel):
     phone: Optional[str] = Field(None, max_length=20)
     attendance: str = Field(..., pattern="^(si|no)$")  # "si" or "no"
     allergies: Optional[str] = Field(None, max_length=500)
-    transport: Optional[str] = Field(None, regex="^(si|no)?$")  # "si", "no", or None
+    transport: Optional[str] = Field(None, pattern="^(si|no)?$")  # "si", "no", or None
     message: Optional[str] = Field(None, max_length=1000)
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
