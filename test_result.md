@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Configure backend for wedding website: 1) Implement RSVP API endpoints, 2) Connect frontend to real backend, 3) Setup MongoDB integration, 4) Ensure full functionality for RSVP submission and data storage"
+user_problem_statement: "Configure Gmail SMTP email notifications for wedding RSVP system: Send immediate email notification to axelvalero@gmail.com when someone submits an RSVP, including all RSVP details in a professional email format."
 
 backend:
   - task: "RSVP API endpoints implementation"
@@ -164,6 +164,18 @@ backend:
         - working: true
           agent: "testing"
           comment: "Frontend-backend integration confirmed working. RSVPSection component properly imports and uses ApiService. Form data correctly formatted for API (null handling for empty fields). Frontend can successfully communicate with backend via REACT_APP_BACKEND_URL. All integration points tested and functional."
+
+  - task: "Gmail SMTP email notifications"
+    implemented: true
+    working: "NA"
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Implemented Gmail SMTP integration with EmailService class. Added email configuration with Gmail App Password (pbkd ovlh lwaa schk), SMTP server settings (smtp.gmail.com:587), and TLS encryption. Created HTML and text email templates with professional wedding theme including all RSVP details. Modified /api/rsvp endpoint to send immediate email notifications to axelvalero@gmail.com upon RSVP submission. Added email status to health check endpoint. Email sending doesn't block RSVP creation if it fails."
 
 frontend:
   - task: "Background color change to #ae9c8f"
