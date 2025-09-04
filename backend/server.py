@@ -232,13 +232,19 @@ async def health_check():
     try:
         # Test database connection
         await db.list_collection_names()
-        return {
-            "status": "healthy",
-            "database": "connected",
-            "timestamp": datetime.now(timezone.utc).isoformat()
-        }
+        db_status = "connected"
     except Exception as e:
-        raise HTTPException(status_code=503, detail=f"Database connection failed: {str(e)}")
+        db_status = f"failed: {str(e)}"
+    
+    # Test email configuration
+    email_status = "configured" if email_service.config.USERNAME and email_service.config.PASSWORD else "not configured"
+    
+    return {
+        "status": "healthy" if db_status == "connected" and email_status == "configured" else "degraded",
+        "database": db_status,
+        "email": email_status,
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
 
 # RSVP Endpoints
 @api_router.post("/rsvp", response_model=RSVPResponse)
