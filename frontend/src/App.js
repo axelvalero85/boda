@@ -13,20 +13,20 @@ const GiftSection = () => {
   const { giftRegistry } = weddingData;
   
   return (
-    <section id="gifts" className="py-20 bg-amber-50">
+    <section id="gifts" className="py-20 bg-green-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Simple Header */}
           <div className="mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-amber-900 mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-green-900 mb-6 tracking-wide">
               Mesa de Regalos
             </h2>
-            <div className="w-24 h-px bg-amber-600 mx-auto mb-8"></div>
+            <div className="w-24 h-px bg-green-600 mx-auto mb-8"></div>
           </div>
 
           {/* Message Card */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-lg p-12 mb-12 shadow-lg border border-amber-200">
-            <p className="text-lg text-amber-800 mb-8 leading-relaxed max-w-2xl mx-auto">
+          <div className="bg-white/80 backdrop-blur-sm rounded-lg p-12 mb-12 shadow-lg border border-green-200">
+            <p className="text-lg text-green-800 mb-8 leading-relaxed max-w-2xl mx-auto">
               {giftRegistry.message}
             </p>
             
@@ -34,7 +34,7 @@ const GiftSection = () => {
               href={giftRegistry.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 border-2 border-amber-800 text-amber-800 text-lg font-medium tracking-wide uppercase hover:bg-amber-800 hover:text-white transition-all duration-300"
+              className="inline-block px-10 py-4 border-2 border-green-800 text-green-800 text-lg font-medium tracking-wide uppercase hover:bg-green-800 hover:text-white transition-all duration-300"
             >
               <div className="flex items-center justify-center space-x-3">
                 <Gift className="w-5 h-5" />
