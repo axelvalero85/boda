@@ -10,20 +10,20 @@ const WeddingHero = () => {
   }, []);
 
   return (
-    <section id="wedding" className="relative min-h-screen flex items-center justify-start overflow-hidden">
+    <section id="wedding" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/wjw341lu_b7a4541b-5ad6-43df-9945-69d829a0e463.JPG"
+          src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/jp8noucl_Header.JPG"
           alt="Axel y Dani - Pareja"
           className="w-full h-full object-cover"
         />
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Content positioned to the left */}
-      <div className={`relative z-20 text-white max-w-lg mx-auto md:mx-0 md:ml-16 px-8 md:px-0 transition-all duration-1000 ease-out ${
+      {/* Content centered */}
+      <div className={`relative z-20 text-center text-white max-w-4xl mx-auto px-8 transition-all duration-1000 ease-out ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         
