@@ -94,7 +94,7 @@ const CountdownSection = () => {
             ))}
           </StaggeredAnimation>
 
-          {/* Message with enhanced animation */}
+          {/* Message with enhanced animation - Updated text */}
           <AnimatedSection 
             className="text-center mt-16" 
             animation="fade-up" 
@@ -102,7 +102,7 @@ const CountdownSection = () => {
           >
             <div className="bg-white/60 backdrop-blur-sm px-8 py-4 inline-block border border-gray-300 hover:bg-white/70 transition-all duration-300">
               <p className="text-lg font-light" style={{ color: '#2e2e22' }}>
-                Ya casiiiiiiii!
+                ah vavavava GPI
               </p>
             </div>
           </AnimatedSection>

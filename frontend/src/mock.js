@@ -57,8 +57,8 @@ export const weddingData = {
   },
   
   giftRegistry: {
-    message: "Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, aquí tienes el enlace a nuestra mesa de regalos:",
-    url: "https://mesaderegalos.liverpool.com.mx/milistaderegalos/51234567" // Mock URL
+    message: "En este día tan importante para nosotros tu compañía es el mejor regalo. Si te gustaría darnos un regalo o apoyarnos para la luna de miel, te compartimos nuestra mesa de regalos.",
+    url: "https://zepika.com/pages/boda-dani-axel"
   },
   
   timeline: {
