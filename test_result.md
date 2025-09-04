@@ -216,53 +216,20 @@ frontend:
 
 metadata:
   created_by: "main_agent"
-  version: "1.0"
-  test_sequence: 1
+  version: "2.0"
+  test_sequence: 2
   run_ui: true
 
 test_plan:
   current_focus:
-    - "All styling updates completed and verified"
+    - "RSVP API endpoints implementation"
+    - "MongoDB integration setup"
+    - "Frontend-backend integration"
+    - "API service layer for frontend"
   stuck_tasks: []
-  test_all: false
+  test_all: true
   test_priority: "high_first"
-
-  - task: "Mobile hero image optimization"
-    implemented: true
-    working: true
-    file: "WeddingHero.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-        - working: true
-          agent: "main"
-          comment: "Successfully adjusted hero image positioning to show both subjects in mobile viewport using object-position center and responsive design"
-
-  - task: "iPhone hero image optimization"
-    implemented: true
-    working: true
-    file: "WeddingHero.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-        - working: true
-          agent: "main"
-          comment: "Successfully fixed iPhone hero positioning to show both subjects centered using object-position: '40% 35%' for perfect mobile display"
-
-  - task: "Tonal-inspired transition effects"
-    implemented: true
-    working: true
-    file: "ScrollAnimations.jsx, CountdownSection.jsx, PhotoGallery.jsx, EtiquetaSection.jsx, RSVPSection.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-        - working: true
-          agent: "main"
-          comment: "Implemented comprehensive scroll-triggered animations, staggered animations, parallax effects, and enhanced hover states inspired by tonaltonal.com design patterns"
 
 agent_communication:
     - agent: "main"
-      message: "Completed iPhone hero optimization and implemented sophisticated transition effects throughout the website. Hero now shows both subjects perfectly centered on all iPhone sizes, and added elegant scroll animations, hover effects, and staggered element appearances inspired by modern web design practices."
+      message: "Backend implementation completed: Full RSVP API with MongoDB integration, frontend API service layer, and updated RSVP component to use real backend. Ready for comprehensive testing of all backend functionality and frontend-backend integration."
