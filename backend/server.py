@@ -50,7 +50,7 @@ class RSVPResponse(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     email: EmailStr
     phone: Optional[str] = Field(None, max_length=20)
-    attendance: str = Field(..., regex="^(si|no)$")  # "si" or "no"
+    attendance: str = Field(..., pattern="^(si|no)$")  # "si" or "no"
     allergies: Optional[str] = Field(None, max_length=500)
     transport: Optional[str] = Field(None, regex="^(si|no)?$")  # "si", "no", or None
     message: Optional[str] = Field(None, max_length=1000)
