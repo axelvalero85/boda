@@ -15,19 +15,19 @@ const GiftSection = () => {
   const { giftRegistry } = weddingData;
   
   return (
-    <section id="gifts" className="py-20" style={{ backgroundColor: '#9ca06e' }}>
+    <section id="gifts" className="py-20" style={{ backgroundColor: '#d6d6c6' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Simple Header */}
           <div className="mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-white mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
               Mesa de Regalos
             </h2>
-            <div className="w-24 h-px bg-white/60 mx-auto mb-8"></div>
+            <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </div>
 
           {/* Message Card */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-12 mb-12 shadow-lg border border-white/20">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-12 mb-12 shadow-lg border border-gray-300">
             <p className="text-lg text-gray-800 mb-8 leading-relaxed max-w-2xl mx-auto">
               {giftRegistry.message}
             </p>
@@ -54,20 +54,20 @@ const VenueSection = () => {
   const { venue, timeline } = weddingData;
   
   return (
-    <section id="venue" className="py-20" style={{ backgroundColor: '#86895d' }}>
+    <section id="venue" className="py-20" style={{ backgroundColor: '#d6d6c6' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extralight text-white mb-6 tracking-wide">
+            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
               Detalles del Evento
             </h2>
-            <div className="w-24 h-px bg-white/60 mx-auto mb-8"></div>
+            <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Venue Info */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-white/20">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-gray-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-6 h-6 text-gray-700 mr-3" />
                 <h3 className="text-2xl font-light text-gray-900">Ubicación</h3>
@@ -94,7 +94,7 @@ const VenueSection = () => {
             </div>
 
             {/* Timeline */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-white/20">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-gray-300">
               <div className="flex items-center mb-6">
                 <Clock className="w-6 h-6 text-gray-700 mr-3" />
                 <h3 className="text-2xl font-light text-gray-900">Cronograma</h3>
@@ -147,7 +147,6 @@ const WeddingPage = () => {
     <div className="min-h-screen">
       <Navigation />
       <WeddingHero />
-      <CountdownSection />
       <CountdownSection />
       <PhotoGallery />
       <EtiquetaSection />
