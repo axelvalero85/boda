@@ -10,7 +10,7 @@ const WeddingHero = () => {
   }, []);
 
   return (
-    <section id="wedding" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="wedding" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-32">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <img
