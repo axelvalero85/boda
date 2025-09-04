@@ -10,42 +10,45 @@ const WeddingHero = () => {
   }, []);
 
   return (
-    <section id="wedding" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="wedding" className="relative min-h-screen flex items-center justify-start overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1656103743142-229f0adaf068?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY291cGxlJTIwb3V0ZG9vcnxlbnwwfHx8fDE3NTQ5MzIxOTh8MA&ixlib=rb-4.1.0&q=85"
+          src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/ecphc7fm_header.png"
           alt="Axel y Dani - Pareja"
           className="w-full h-full object-cover"
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Content */}
-      <div className={`relative z-20 text-center text-white max-w-4xl mx-auto px-8 transition-all duration-1000 ease-out ${
+      {/* Content positioned to the left */}
+      <div className={`relative z-20 text-white max-w-lg mx-auto md:mx-0 md:ml-16 px-8 md:px-0 transition-all duration-1000 ease-out ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         
         {/* Names */}
-        <h1 className="text-6xl md:text-8xl font-extralight mb-8 tracking-wider">
+        <h1 className="text-5xl md:text-7xl font-extralight mb-6 tracking-wider leading-tight">
           {couple.groom} & {couple.bride}
         </h1>
         
-        {/* Wedding Details */}
-        <div className="mb-12 space-y-2">
+        {/* Wedding Date */}
+        <div className="mb-8 space-y-3">
           <p className="text-xl md:text-2xl font-light tracking-wide">
             {couple.weddingDate}
           </p>
           <p className="text-lg md:text-xl font-light opacity-90">
-            {venue.name}, {venue.address}
+            {venue.name}
+          </p>
+          <p className="text-base md:text-lg font-light opacity-80">
+            {venue.address}
           </p>
         </div>
         
         {/* CTA Button */}
         <button 
           onClick={() => document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' })}
-          className="px-12 py-4 border-2 border-white text-white text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-gray-800 transition-all duration-300 hover:scale-105"
+          className="px-10 py-3 border-2 border-white text-white text-lg font-medium tracking-wide uppercase hover:bg-white hover:text-gray-800 transition-all duration-300 hover:scale-105"
         >
           RSVP
         </button>

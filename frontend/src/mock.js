@@ -5,7 +5,7 @@ export const weddingData = {
     bride: "Dani",
     groom: "Axel",
     weddingDate: "7 de Febrero, 2026",
-    venue: "La Marquesa, Estado de México"
+    venue: "Finca San Gabriel La Cañada, Estado de México"
   },
   
   rsvp: {
@@ -47,8 +47,8 @@ export const weddingData = {
   ],
   
   venue: {
-    name: "La Marquesa",
-    address: "Parque Nacional La Marquesa, Estado de México",
+    name: "Finca San Gabriel La Cañada",
+    address: "Estado de México",
     coordinates: {
       lat: 19.327,
       lng: -99.281
