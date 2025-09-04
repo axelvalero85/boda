@@ -9,7 +9,7 @@ const EtiquetaSection = () => {
   }, []);
 
   return (
-    <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#86895d' }}>
+    <section className="relative py-32 overflow-hidden" id="etiqueta" style={{ backgroundColor: '#86895d' }}>
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
