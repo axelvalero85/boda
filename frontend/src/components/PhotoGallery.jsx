@@ -37,7 +37,7 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="relative py-32 overflow-hidden" style={{ backgroundColor: '#eaeae2' }}>
+    <section id="gallery" className="relative py-32 overflow-hidden" style={{ backgroundColor: '#ae9c8f' }}>
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

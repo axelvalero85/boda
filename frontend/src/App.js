@@ -15,7 +15,7 @@ const GiftSection = () => {
   const { giftRegistry } = weddingData;
   
   return (
-    <section id="gifts" className="py-20" style={{ backgroundColor: '#eaeae2' }}>
+    <section id="gifts" className="py-20" style={{ backgroundColor: '#ae9c8f' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Simple Header */}
@@ -28,7 +28,7 @@ const GiftSection = () => {
 
           {/* Message Card - No rounded corners */}
           <div className="bg-white/90 backdrop-blur-sm p-12 mb-12 shadow-lg border border-gray-300">
-            <p className="text-lg text-gray-800 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg mb-8 leading-relaxed max-w-2xl mx-auto" style={{ color: '#2e2e22' }}>
               {giftRegistry.message}
             </p>
             
@@ -67,7 +67,7 @@ const VenueSection = () => {
   const { venue, timeline } = weddingData;
   
   return (
-    <section id="venue" className="py-20" style={{ backgroundColor: '#eaeae2' }}>
+    <section id="venue" className="py-20" style={{ backgroundColor: '#ae9c8f' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -87,9 +87,9 @@ const VenueSection = () => {
               </div>
               
               <div className="space-y-4">
-                <p className="text-xl text-gray-800 font-medium">{venue.name}</p>
-                <p className="text-gray-700">{venue.address}</p>
-                <p className="text-gray-700 italic">{venue.description}</p>
+                <p className="text-xl font-medium" style={{ color: '#2e2e22' }}>{venue.name}</p>
+                <p style={{ color: '#2e2e22' }}>{venue.address}</p>
+                <p className="italic" style={{ color: '#2e2e22' }}>{venue.description}</p>
                 
                 {/* Google Maps Link */}
                 <div className="pt-4">
@@ -128,8 +128,8 @@ const VenueSection = () => {
                   { event: 'Fiesta', time: timeline.party }
                 ].map((item, index) => (
                   <div key={item.event} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                    <span className="text-gray-700">{item.event}</span>
-                    <span className="font-medium text-gray-800">{item.time}</span>
+                    <span style={{ color: '#2e2e22' }}>{item.event}</span>
+                    <span className="font-medium" style={{ color: '#2e2e22' }}>{item.time}</span>
                   </div>
                 ))}
               </div>

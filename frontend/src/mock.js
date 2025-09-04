@@ -31,7 +31,7 @@ export const weddingData = {
     },
     {
       id: 4,
-      url: "https://customer-assets.emergentagent.com/job_boda-especial/artifacts/41bm201s_Pasto.JPG",
+      url: "https://customer-assets.emergentagent.com/job_axeldani-wedding/artifacts/kwqibtpu_pasto2.jpg",
       alt: "Pareja sentada en el pasto"
     },
     {
