@@ -11,6 +11,7 @@ import { AnimatedSection, StaggeredAnimation } from './ScrollAnimations';
 const RSVPSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { logos } = weddingData;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,11 +77,18 @@ const RSVPSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="text-center mb-16" animation="fade-up">
-            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Acompáñanos
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.black} 
+                alt="Axel & Dani Logo" 
+                className="w-20 h-20 md:w-24 md:h-24 mr-6 opacity-90"
+              />
+              <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 tracking-wide">
+                Acompáñanos
+              </h2>
+            </div>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
             <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#2e2e22' }}>
               Tu presencia hará de nuestro día aún más especial. Por favor confirma tu asistencia 

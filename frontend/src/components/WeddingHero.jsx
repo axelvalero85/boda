@@ -11,7 +11,7 @@ const WeddingHero = () => {
 
   return (
     <section id="wedding" className="relative min-h-screen flex items-end justify-center overflow-hidden">
-      {/* Hero Background Image - NO PATTERN, clean photo */}
+      {/* Hero Background Image - COMPLETELY CLEAN, NO PATTERN */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://customer-assets.emergentagent.com/job_boda-especial/artifacts/jp8noucl_Header.JPG"
@@ -22,11 +22,11 @@ const WeddingHero = () => {
             transformOrigin: 'center center'
           }}
         />
-        {/* Sophisticated Overlay with Gradient */}
+        {/* Sophisticated Overlay with Gradient - NO PATTERN INTERFERENCE */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
       </div>
 
-      {/* Decorative Elements with Tonal-inspired animations */}
+      {/* Decorative Elements with Tonal-inspired animations - NO GEOMETRIC PATTERN */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Floating Elements */}
         <div className="absolute top-20 left-20 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>

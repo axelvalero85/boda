@@ -5,7 +5,7 @@ import { AnimatedSection, StaggeredAnimation } from './ScrollAnimations';
 
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const { photos } = weddingData;
+  const { photos, logos } = weddingData;
 
   const openLightbox = (photo, index) => {
     setSelectedPhoto({ ...photo, index });
@@ -39,11 +39,18 @@ const PhotoGallery = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="text-center mb-24" animation="fade-up">
-            <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 tracking-[0.15em]">
-              Nuestra Historia
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.black} 
+                alt="Axel & Dani Logo" 
+                className="w-20 h-20 md:w-24 md:h-24 mr-6 opacity-90"
+              />
+              <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 tracking-[0.15em]">
+                Nuestra Historia
+              </h2>
+            </div>
             
             <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light" style={{ color: '#2e2e22' }}>
               Cada fotografía cuenta una parte de nuestra historia de amor. 

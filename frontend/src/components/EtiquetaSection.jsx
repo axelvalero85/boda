@@ -1,7 +1,10 @@
 import React from 'react';
 import { AnimatedSection } from './ScrollAnimations';
+import { weddingData } from '../mock';
 
 const EtiquetaSection = () => {
+  const { logos } = weddingData;
+
   return (
     <section className="relative py-32 overflow-hidden geometric-pattern-original" id="etiqueta" style={{ backgroundColor: '#ae9c8f' }}>
       {/* Original geometric background pattern overlay */}
@@ -9,11 +12,18 @@ const EtiquetaSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
-          {/* Header */}
+          {/* Header with Black Logo - Larger */}
           <AnimatedSection className="text-center mb-20" animation="fade-up">
-            <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 tracking-[0.15em]">
-              Etiqueta
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.black} 
+                alt="Axel & Dani Logo" 
+                className="w-20 h-20 md:w-24 md:h-24 mr-6 opacity-90"
+              />
+              <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 tracking-[0.15em]">
+                Etiqueta
+              </h2>
+            </div>
             
             <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light mb-12" style={{ color: '#2e2e22' }}>
               Queremos que te sientas cómodo y elegante en nuestro día especial.
