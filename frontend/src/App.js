@@ -13,17 +13,24 @@ import { weddingData } from './mock';
 import { AnimatedSection } from './components/ScrollAnimations';
 
 const GiftSection = () => {
-  const { giftRegistry } = weddingData;
+  const { giftRegistry, logos } = weddingData;
   
   return (
     <section id="gifts" className="py-20" style={{ backgroundColor: '#ae9c8f' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Simple Header */}
+          {/* Header with Logo */}
           <AnimatedSection className="mb-16" animation="fade-up">
-            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Mesa de Regalos
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.golden} 
+                alt="Axel & Dani Logo" 
+                className="w-16 h-16 md:w-20 md:h-20 mr-4 opacity-80"
+              />
+              <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 tracking-wide">
+                Mesa de Regalos
+              </h2>
+            </div>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </AnimatedSection>
 
@@ -67,17 +74,24 @@ const GiftSection = () => {
 };
 
 const VenueSection = () => {
-  const { venue, timeline } = weddingData;
+  const { venue, timeline, logos } = weddingData;
   
   return (
     <section id="venue" className="py-20" style={{ backgroundColor: '#ae9c8f' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
+          {/* Header with Logo */}
           <AnimatedSection className="text-center mb-16" animation="fade-up">
-            <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 tracking-wide">
-              Detalles del Evento
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.golden} 
+                alt="Axel & Dani Logo" 
+                className="w-16 h-16 md:w-20 md:h-20 mr-4 opacity-80"
+              />
+              <h2 className="text-4xl md:text-6xl font-extralight text-gray-800 tracking-wide">
+                Detalles del Evento
+              </h2>
+            </div>
             <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
           </AnimatedSection>
 
@@ -160,11 +174,11 @@ const VenueSection = () => {
                   <h3 className="text-2xl font-light text-gray-900">Cronograma</h3>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-4 mb-6">
                   {[
                     { event: 'Ceremonia', time: timeline.ceremony },
+                    { event: 'Comida', time: timeline.reception },
                     { event: 'Cóctel', time: timeline.cocktail },
-                    { event: 'Recepción', time: timeline.reception },
                     { event: 'Fiesta', time: timeline.party }
                   ].map((item, index) => (
                     <div key={item.event} className="flex justify-between items-center py-3 border-b border-gray-200 last:border-b-0 hover:bg-gray-50/50 transition-all duration-200">
@@ -172,6 +186,15 @@ const VenueSection = () => {
                       <span className="font-medium" style={{ color: '#2e2e22' }}>{item.time}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Small logo at bottom of timeline */}
+                <div className="flex justify-center pt-4">
+                  <img 
+                    src={logos.golden} 
+                    alt="Axel & Dani Logo" 
+                    className="w-12 h-12 opacity-60"
+                  />
                 </div>
               </div>
             </AnimatedSection>
@@ -183,12 +206,21 @@ const VenueSection = () => {
 };
 
 const Footer = () => {
-  const { couple } = weddingData;
+  const { couple, logos } = weddingData;
   
   return (
     <footer className="text-white py-16" style={{ backgroundColor: '#917955' }}>
       <div className="container mx-auto px-6 text-center">
         <AnimatedSection className="max-w-2xl mx-auto" animation="fade-up">
+          {/* Black Logo in Footer */}
+          <div className="mb-8">
+            <img 
+              src={logos.black} 
+              alt="Axel & Dani Logo" 
+              className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 opacity-90"
+            />
+          </div>
+          
           <h3 className="text-2xl font-light mb-2 tracking-wide">
             {couple.groom} & {couple.bride}
           </h3>

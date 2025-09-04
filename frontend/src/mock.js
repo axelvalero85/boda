@@ -62,10 +62,15 @@ export const weddingData = {
   },
   
   timeline: {
-    ceremony: "16:00 hrs",
-    cocktail: "17:30 hrs", 
-    reception: "19:00 hrs",
-    party: "21:00 hrs"
+    ceremony: "14:00 hrs",
+    cocktail: "17:00 hrs", 
+    reception: "16:30 hrs",
+    party: "18:00 hrs"
+  },
+
+  logos: {
+    black: "https://customer-assets.emergentagent.com/job_axeldani-wedding/artifacts/rclm0ktl_LOGO%20AD.png",
+    golden: "https://customer-assets.emergentagent.com/job_axeldani-wedding/artifacts/w07soup3_LOGO%20AD2.png"
   }
 };
 

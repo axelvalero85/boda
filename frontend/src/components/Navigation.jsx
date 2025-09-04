@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import { weddingData } from '../mock';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { logos } = weddingData;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +43,13 @@ const Navigation = () => {
         <div className="container mx-auto px-4 md:px-6 py-4 md:py-5">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="text-lg md:text-xl font-light tracking-[0.15em]">
+            <div className="flex items-center text-lg md:text-xl font-light tracking-[0.15em]">
+              {/* Small logo next to brand name */}
+              <img 
+                src={isScrolled ? logos.golden : logos.golden} 
+                alt="Axel & Dani Logo" 
+                className="w-8 h-8 mr-3 opacity-80"
+              />
               <span className={`transition-colors duration-300 ${
                 isScrolled ? 'text-gray-800' : 'text-white'
               }`}>
@@ -120,6 +128,15 @@ const Navigation = () => {
           >
             <X className="w-5 h-5" />
           </button>
+
+          {/* Logo in mobile menu */}
+          <div className="mb-8">
+            <img 
+              src={logos.golden} 
+              alt="Axel & Dani Logo" 
+              className="w-16 h-16 mx-auto opacity-90"
+            />
+          </div>
 
           {/* Navigation Items */}
           <div className="space-y-4 px-6 w-full max-w-sm">

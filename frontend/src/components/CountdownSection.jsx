@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatedSection, StaggeredAnimation } from './ScrollAnimations';
+import { weddingData } from '../mock';
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState({});
+  const { logos } = weddingData;
 
   useEffect(() => {
     const weddingDate = new Date('2026-02-07T16:00:00').getTime();
@@ -46,11 +48,18 @@ const CountdownSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Header with Tonal-inspired animations */}
+          {/* Header with Logo */}
           <AnimatedSection className="text-center mb-20" animation="fade-up">
-            <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 tracking-[0.15em]">
-              Countdown
-            </h2>
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={logos.golden} 
+                alt="Axel & Dani Logo" 
+                className="w-14 h-14 md:w-16 md:h-16 mr-4 opacity-80"
+              />
+              <h2 className="text-5xl md:text-7xl font-extralight text-gray-800 tracking-[0.15em]">
+                Countdown
+              </h2>
+            </div>
             
             <p className="text-xl max-w-3xl mx-auto leading-relaxed font-light" style={{ color: '#2e2e22' }}>
               El tiempo vuela cuando estás enamorado. ¡Mira cuánto falta para nuestro gran día!
