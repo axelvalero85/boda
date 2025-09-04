@@ -22,6 +22,139 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# Email Configuration
+class EmailConfig:
+    SMTP_SERVER = os.getenv("GMAIL_SMTP_SERVER", "smtp.gmail.com")
+    SMTP_PORT = int(os.getenv("GMAIL_SMTP_PORT", "587"))
+    USERNAME = os.getenv("GMAIL_USERNAME")
+    PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
+    FROM_NAME = os.getenv("GMAIL_FROM_NAME", "Wedding RSVP System")
+    USE_TLS = True
+
+class EmailService:
+    def __init__(self):
+        self.config = EmailConfig()
+        self._validate_config()
+    
+    def _validate_config(self):
+        if not self.config.USERNAME or not self.config.PASSWORD:
+            raise ValueError("Gmail credentials not properly configured")
+    
+    def send_rsvp_notification(self, rsvp_data: dict) -> bool:
+        """Send RSVP notification email to the couple"""
+        try:
+            msg = MIMEMultipart("alternative")
+            msg["Subject"] = f"Nueva Confirmación RSVP - {rsvp_data['name']}"
+            msg["From"] = f"{self.config.FROM_NAME} <{self.config.USERNAME}>"
+            msg["To"] = self.config.USERNAME  # Send to axelvalero@gmail.com
+            
+            # Create HTML and text versions
+            html_content = self._create_notification_html(rsvp_data)
+            text_content = self._create_notification_text(rsvp_data)
+            
+            msg.attach(MIMEText(text_content, "plain"))
+            msg.attach(MIMEText(html_content, "html"))
+            
+            # Send email
+            context = ssl.create_default_context()
+            with smtplib.SMTP(self.config.SMTP_SERVER, self.config.SMTP_PORT) as server:
+                server.starttls(context=context)
+                server.login(self.config.USERNAME, self.config.PASSWORD)
+                server.send_message(msg)
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to send RSVP notification email: {str(e)}")
+            return False
+    
+    def _create_notification_html(self, rsvp_data: dict) -> str:
+        """Create HTML email template for RSVP notification"""
+        attendance_text = "✅ SÍ asistirá" if rsvp_data['attendance'] == 'si' else "❌ NO asistirá"
+        attendance_color = "#28a745" if rsvp_data['attendance'] == 'si' else "#dc3545"
+        
+        transport_text = ""
+        if rsvp_data.get('transport'):
+            transport_text = f"<p><strong>🚗 Transporte:</strong> {'Necesita transporte' if rsvp_data['transport'] == 'si' else 'No necesita transporte'}</p>"
+        
+        phone_text = f"<p><strong>📱 Teléfono:</strong> {rsvp_data['phone']}</p>" if rsvp_data.get('phone') else ""
+        allergies_text = f"<p><strong>🍽️ Alergias/Restricciones:</strong> {rsvp_data['allergies']}</p>" if rsvp_data.get('allergies') else ""
+        message_text = f"<p><strong>💬 Mensaje:</strong> {rsvp_data['message']}</p>" if rsvp_data.get('message') else ""
+        
+        return f"""
+        <html>
+            <body style="font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background-color: #ae9c8f;">
+                <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h1 style="color: #2e2e22; font-size: 28px; margin: 0;">💒 Nueva Confirmación RSVP</h1>
+                        <h2 style="color: #917955; font-size: 24px; margin: 10px 0;">Axel & Dani</h2>
+                        <p style="color: #666; font-size: 16px;">Boda • 07 de Febrero, 2026</p>
+                    </div>
+                    
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <h3 style="color: #2e2e22; margin-top: 0;">📝 Detalles de la Confirmación</h3>
+                        <p><strong>👤 Nombre:</strong> {rsvp_data['name']}</p>
+                        <p><strong>📧 Email:</strong> {rsvp_data['email']}</p>
+                        {phone_text}
+                        <p><strong>✨ Asistencia:</strong> <span style="color: {attendance_color}; font-weight: bold;">{attendance_text}</span></p>
+                        {transport_text}
+                        {allergies_text}
+                        {message_text}
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                        <p style="color: #666; font-size: 14px; margin: 0;">
+                            ⏰ Recibido el {rsvp_data.get('timestamp', datetime.now(timezone.utc)).strftime('%d/%m/%Y a las %H:%M')}
+                        </p>
+                        <p style="color: #666; font-size: 14px; margin: 5px 0 0 0;">
+                            🌐 Sistema de Confirmaciones - Boda Axel & Dani
+                        </p>
+                    </div>
+                </div>
+            </body>
+        </html>
+        """
+    
+    def _create_notification_text(self, rsvp_data: dict) -> str:
+        """Create plain text email template for RSVP notification"""
+        attendance_text = "SÍ asistirá" if rsvp_data['attendance'] == 'si' else "NO asistirá"
+        
+        text_parts = [
+            "=== NUEVA CONFIRMACIÓN RSVP ===",
+            "Boda de Axel & Dani - 07 de Febrero, 2026",
+            "",
+            "DETALLES DE LA CONFIRMACIÓN:",
+            f"Nombre: {rsvp_data['name']}",
+            f"Email: {rsvp_data['email']}",
+        ]
+        
+        if rsvp_data.get('phone'):
+            text_parts.append(f"Teléfono: {rsvp_data['phone']}")
+        
+        text_parts.append(f"Asistencia: {attendance_text}")
+        
+        if rsvp_data.get('transport'):
+            transport_text = "Necesita transporte" if rsvp_data['transport'] == 'si' else "No necesita transporte"
+            text_parts.append(f"Transporte: {transport_text}")
+        
+        if rsvp_data.get('allergies'):
+            text_parts.append(f"Alergias/Restricciones: {rsvp_data['allergies']}")
+        
+        if rsvp_data.get('message'):
+            text_parts.append(f"Mensaje: {rsvp_data['message']}")
+        
+        text_parts.extend([
+            "",
+            f"Recibido el {rsvp_data.get('timestamp', datetime.now(timezone.utc)).strftime('%d/%m/%Y a las %H:%M')}",
+            "",
+            "Sistema de Confirmaciones - Boda Axel & Dani"
+        ])
+        
+        return "\n".join(text_parts)
+
+# Initialize email service
+email_service = EmailService()
+
 # Create the main app without a prefix
 app = FastAPI(title="Axel & Dani Wedding API", version="1.0.0")
 
