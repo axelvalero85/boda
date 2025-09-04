@@ -22,8 +22,8 @@ const WeddingHero = () => {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Names - positioned very low */}
-      <div className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20 text-center text-white transition-all duration-1000 ease-out ${
+      {/* Names - positioned at shirt pocket height */}
+      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-8 z-20 text-center text-white transition-all duration-1000 ease-out ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         <h1 className="text-5xl md:text-7xl font-extralight tracking-wider">
