@@ -111,7 +111,7 @@ const Navigation = () => {
             {/* Menu Header */}
             <div className="flex items-center justify-center mb-12">
               <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                <Heart className="w-6 h-6 text-rose-500 fill-rose-500" />
+                <Heart className="w-6 h-6 text-gray-400 fill-gray-400" />
               </div>
             </div>
 
